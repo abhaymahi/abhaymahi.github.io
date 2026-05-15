@@ -28,6 +28,11 @@
                     <li><a href="#gallery">Gallery</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
+                <div class="menu-toggle" id="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </nav>
         </div>
     </header>
@@ -35,38 +40,42 @@
     <main>
         <!-- Hero Section -->
         <section id="home" class="hero">
-            <div class="container" style="display: grid; grid-template-columns: 1.2fr 1fr; gap: 2rem; align-items: center;">
-                <div class="hero-content">
-                    <span class="hero-label">Available for 2026 Collaborations</span>
-                    <h1>Abhay Kumar <span>Rajak</span></h1>
-                    <p style="font-size: 1.25rem; color: var(--text-muted); margin-bottom: 3rem; max-width: 600px;">
-                        Mr. Teen India Popular-2022. Emerging Professional Model and Student Leader committed to excellence and visionary impact.
-                    </p>
-                    <div class="hero-cta">
-                        <a href="mailto:gonuabhay@gmail.com" class="btn btn-primary">Work with me</a>
-                        <a href="#gallery" class="btn btn-outline">View Gallery</a>
+            <div class="container">
+                <div class="hero-grid">
+                    <div class="hero-content reveal">
+                        <span class="hero-label">Available for 2026 Collaborations</span>
+                        <h1>Abhay Kumar <span>Rajak</span></h1>
+                        <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2.5rem; max-width: 600px;">
+                            Mr. Teen India Popular-2022. Emerging Professional Model and Student Leader committed to excellence and visionary impact.
+                        </p>
+                        <div class="hero-cta">
+                            <a href="mailto:gonuabhay@gmail.com" class="btn btn-primary">Work with me</a>
+                            <a href="#gallery" class="btn btn-outline">View Gallery</a>
+                        </div>
                     </div>
-                </div>
-                <div class="hero-image-wrapper reveal" style="position: relative;">
-                    <img src="images/main_profile.png" alt="Abhay Kumar Rajak Portrait" style="width: 100%; border-radius: 30px; box-shadow: 0 30px 60px rgba(0,0,0,0.5);">
-                    <div style="position: absolute; bottom: -20px; right: -20px; width: 100px; height: 100px; background: var(--accent-primary); border-radius: 20px; z-index: -1;"></div>
+                    <div class="hero-image-wrapper reveal">
+                        <div style="position: relative; max-width: 500px; margin: 0 auto;">
+                            <img src="images/main_profile.png" alt="Abhay Kumar Rajak Portrait" style="box-shadow: 0 30px 60px rgba(0,0,0,0.5);">
+                            <div style="position: absolute; bottom: -15px; right: -15px; width: 80px; height: 80px; background: var(--accent-primary); border-radius: 20px; z-index: -1;"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- About Section -->
-        <section id="about">
+        <section id="about" style="background: var(--bg-secondary);">
             <div class="container">
                 <div class="section-title">
                     <span class="hero-label">The Journey</span>
                     <h2>Evolution.</h2>
                 </div>
-                <div style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; align-items: center;">
-                    <div class="hero-image-wrapper reveal">
-                        <img src="images/main_profile.png" alt="Abhay Kumar Rajak" style="width: 100%; border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.3);">
+                <div class="responsive-grid two-cols" style="align-items: center;">
+                    <div class="hero-image-wrapper reveal" style="order: 2; margin-top: 2rem;">
+                        <img src="images/main_profile.png" alt="Abhay Kumar Rajak" style="border-radius: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.3);">
                     </div>
-                    <div>
-                        <div class="glass-card">
+                    <div style="order: 1;">
+                        <div class="glass-card reveal">
                             <p style="margin-bottom: 1.5rem;">
                                 Starting from the small town of Kursela, Katihar, my journey has always been about pushing boundaries. What began as a dream to represent my region on a national stage culminated in winning the <strong>Mr. Teen India Popular</strong> title in 2022.
                             </p>
@@ -74,14 +83,14 @@
                                 Since then, I have transitioned into professional modeling and intensified my work as a student leader, bridging the gap between artistic expression and community advocacy.
                             </p>
                         </div>
-                        <div class="stats-grid" style="margin-top: 2rem;">
+                        <div class="stats-grid reveal" style="margin-top: 2rem;">
                             <div class="stat-card">
                                 <h3>2022</h3>
-                                <p>Title Winner</p>
+                                <p style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted);">Title Winner</p>
                             </div>
                             <div class="stat-card">
                                 <h3>50+</h3>
-                                <p>Events Led</p>
+                                <p style="font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted);">Events Led</p>
                             </div>
                         </div>
                     </div>
@@ -90,22 +99,22 @@
         </section>
 
         <!-- Achievements Section -->
-        <section id="achievements" style="background: var(--bg-secondary);">
+        <section id="achievements">
             <div class="container">
                 <div class="section-title">
                     <span class="hero-label">Recognition</span>
                     <h2>Milestones.</h2>
                 </div>
-                <div class="stats-grid">
-                    <div class="glass-card">
+                <div class="responsive-grid three-cols">
+                    <div class="glass-card reveal">
                         <h4 style="color: var(--accent-primary); margin-bottom: 1rem;">Mr. Teen India Popular</h4>
                         <p style="color: var(--text-muted); font-size: 0.9rem;">National recognition at the Alee Club 24th Miss & Mr. Teen India competition, showcasing charisma and public appeal.</p>
                     </div>
-                    <div class="glass-card">
+                    <div class="glass-card reveal">
                         <h4 style="color: var(--accent-primary); margin-bottom: 1rem;">Student Leadership</h4>
                         <p style="color: var(--text-muted); font-size: 0.9rem;">Advocating for student welfare and leading initiatives in Katihar, Bihar, fostering community growth.</p>
                     </div>
-                    <div class="glass-card">
+                    <div class="glass-card reveal">
                         <h4 style="color: var(--accent-primary); margin-bottom: 1rem;">Professional Modeling</h4>
                         <p style="color: var(--text-muted); font-size: 0.9rem;">Representing high-end lifestyle brands and participating in fashion showcases across the country.</p>
                     </div>
@@ -114,14 +123,14 @@
         </section>
 
         <!-- Gallery Section -->
-        <section id="gallery">
+        <section id="gallery" style="background: var(--bg-secondary);">
             <div class="container">
                 <div class="section-title">
                     <span class="hero-label">Portfolio</span>
                     <h2>Gallery.</h2>
                 </div>
-                <div style="display: grid; grid-template-columns: 1fr; gap: 2rem;" id="portfolio-grid">
-                    <div class="glass-card" style="text-align: center; padding: 4rem; border: 2px dashed var(--glass-border);">
+                <div class="responsive-grid" id="portfolio-grid">
+                    <div class="glass-card reveal" style="text-align: center; padding: 4rem; border: 2px dashed var(--glass-border);">
                         <h4 style="color: var(--accent-primary); margin-bottom: 1rem;">2026 Portfolio Update in Progress</h4>
                         <p style="color: var(--text-muted);">I am currently curating my latest professional editorial and runway shots. Stay tuned for the new collection.</p>
                     </div>
@@ -129,14 +138,13 @@
             </div>
         </section>
 
-
         <!-- Contact Section -->
         <section id="contact">
             <div class="container">
-                <div class="glass-card" style="text-align: center; padding: 4rem;">
+                <div class="glass-card reveal" style="text-align: center; padding: 3rem 1.5rem;">
                     <span class="hero-label">Let's Connect</span>
-                    <h2 style="font-size: 3.5rem; margin-bottom: 2rem;">Ready for the next big thing?</h2>
-                    <p style="margin-bottom: 3rem; color: var(--text-muted);">For bookings, collaborations, or student leadership inquiries.</p>
+                    <h2 style="font-size: clamp(2rem, 8vw, 3.5rem); margin-bottom: 1.5rem;">Ready for the next big thing?</h2>
+                    <p style="margin-bottom: 2.5rem; color: var(--text-muted);">For bookings, collaborations, or student leadership inquiries.</p>
                     <a href="mailto:gonuabhay@gmail.com" class="btn btn-primary">Send an Email</a>
                 </div>
             </div>
