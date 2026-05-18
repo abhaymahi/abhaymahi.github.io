@@ -1150,7 +1150,7 @@ footer {
 
 .marquee-track {
     display: flex;
-    gap: 1.8rem;
+    gap: var(--marquee-gap, 1.8rem);
     width: max-content;
     animation: marqueeScroll 45s linear infinite;
 }
@@ -1194,7 +1194,7 @@ footer {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(calc(-50% - 0.9rem));
+        transform: translateX(calc(-50% - (var(--marquee-gap, 1.8rem) / 2)));
     }
 }
 
@@ -1268,9 +1268,12 @@ footer {
 
 /* Responsive adjustment for Mobile view on Marquee Carousel */
 @media (max-width: 768px) {
+    :root {
+        --marquee-gap: 1rem;
+    }
     .marquee-item {
-        width: 200px;
-        height: 270px;
+        width: 180px;
+        height: 250px;
     }
     .gallery-grid .gallery-item img {
         height: 320px;
