@@ -546,7 +546,7 @@ footer {
 .timeline-media img {
     width: 100%;
     height: auto;
-    max-height: 380px;
+    max-height: 500px;
     object-fit: cover;
     border-radius: 16px;
     transition: var(--transition-smooth);
@@ -645,6 +645,20 @@ footer {
     pointer-events: none;
     border-radius: 0 0 16px 16px;
     font-family: var(--font-primary);
+    
+    /* Truncation styles for master images */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: var(--transition-smooth);
+}
+
+.timeline-media[data-lightbox-caption]:hover::after {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    padding-top: 3.5rem;
+    background: rgba(10, 10, 11, 0.85);
 }
 
 .timeline-gallery-thumb[data-lightbox-caption]::before {
