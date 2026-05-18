@@ -17,18 +17,56 @@
 </head>
 <body>
 
+    <!-- Floating Pinned Always-Visible Language Switcher -->
+    <div class="floating-lang-pill">
+        <button class="floating-lang-btn active" id="float-lang-en" onclick="setLanguage('en')">EN</button>
+        <span class="floating-lang-divider">|</span>
+        <button class="floating-lang-btn" id="float-lang-hi" onclick="setLanguage('hi')">हिन्दी</button>
+    </div>
+
+    <!-- First-Time Language Preference Modal Overlay -->
+    <div id="lang-pref-modal" class="lang-modal-overlay">
+        <div class="lang-modal-card">
+            <h2 class="lang-modal-title">
+                <span class="lang-en">Choose Your Language</span>
+                <span class="lang-hi">अपनी भाषा चुनें</span>
+            </h2>
+            <p class="lang-modal-subtitle">
+                <span class="lang-en">Welcome to Abhay Kumar Rajak's Official Portfolio</span>
+                <span class="lang-hi">अभय कुमार रजक के आधिकारिक पोर्टफोलियो में आपका स्वागत है</span>
+            </p>
+            <div class="lang-modal-options">
+                <button class="lang-modal-opt-btn" onclick="selectInitialLanguage('en')">
+                    <span class="opt-lang-title">English</span>
+                    <span class="opt-lang-desc">Scholar • Public Speaker • Model</span>
+                </button>
+                <button class="lang-modal-opt-btn" onclick="selectInitialLanguage('hi')">
+                    <span class="opt-lang-title">हिन्दी (Hindi)</span>
+                    <span class="opt-lang-desc">राजनीति शास्त्र छात्र • छात्र नेता • मॉडल</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
     <header id="header">
         <div class="container">
             <nav>
                 <a href="#" class="logo">ABHAY<span>.</span></a>
                 <ul class="nav-links" style="align-items: center;">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#achievements">Achievements</a></li>
-                    <li><a href="#profile">Profile</a></li>
-                    <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#" class="nav-cv-btn" onclick="window.print(); return false;"><i class="fa-solid fa-download"></i>CV</a></li>
+                    <li><a href="#home"><span class="lang-en">Home</span><span class="lang-hi">मुख्य पृष्ठ</span></a></li>
+                    <li><a href="#about"><span class="lang-en">About</span><span class="lang-hi">परिचय</span></a></li>
+                    <li><a href="#achievements"><span class="lang-en">Achievements</span><span class="lang-hi">उपलब्धियां</span></a></li>
+                    <li><a href="#profile"><span class="lang-en">Profile</span><span class="lang-hi">बायोडाटा</span></a></li>
+                    <li><a href="#gallery"><span class="lang-en">Gallery</span><span class="lang-hi">गैलरी</span></a></li>
+                    <li><a href="#contact"><span class="lang-en">Contact</span><span class="lang-hi">संपर्क</span></a></li>
+                    <li><a href="#" class="nav-cv-btn" onclick="window.print(); return false;"><i class="fa-solid fa-download"></i><span class="lang-en">CV</span><span class="lang-hi">सीवी</span></a></li>
+                    <li class="lang-switch-li" style="margin-left: 1rem; border-left: 1px solid var(--glass-border); padding-left: 1rem;">
+                        <div style="display: flex; align-items: center; gap: 4px;">
+                            <button id="btn-lang-en" class="lang-toggle-btn active" onclick="setLanguage('en')">EN</button>
+                            <span style="color: var(--text-muted); font-size: 0.7rem; opacity: 0.5;">|</span>
+                            <button id="btn-lang-hi" class="lang-toggle-btn" onclick="setLanguage('hi')">हिन्दी</button>
+                        </div>
+                    </li>
                 </ul>
                 <div class="menu-toggle" id="mobile-menu-btn">
                     <span></span>
@@ -45,15 +83,30 @@
             <div class="container">
                 <div class="hero-grid">
                     <div class="hero-content reveal">
-                        <span class="hero-label">Vidhan Sabha Speaker | Chhatra Neta | Model of the Year</span>
-                        <h1>Abhay Kumar <span>Rajak</span></h1>
+                        <span class="hero-label">
+                            <span class="lang-en">Vidhan Sabha Speaker | Chhatra Neta | Model of the Year</span>
+                            <span class="lang-hi">विधानसभा वक्ता | छात्र नेता | मॉडल ऑफ द ईयर</span>
+                        </span>
+                        <h1 class="lang-en">Abhay Kumar <span>Rajak</span></h1>
+                        <h1 class="lang-hi">अभय कुमार <span>रजक</span></h1>
                         <p style="font-size: 1.1rem; color: var(--text-muted); margin-bottom: 2.5rem; max-width: 600px; line-height: 1.6;">
-                            Award-winning student orator, state-level youth speaker representing Katihar inside the Bihar Legislative Vidhan Sabha, Model of the Year 2024, and Alee Club Mr. Teen India champion.
+                            <span class="lang-en">Award-winning student orator, state-level youth speaker representing Katihar inside the Bihar Legislative Vidhan Sabha, Model of the Year 2024, and Alee Club Mr. Teen India champion.</span>
+                            <span class="lang-hi">पुरस्कार विजेता छात्र वक्ता, बिहार विधान सभा में कटिहार के युवाओं का प्रतिनिधित्व करने वाले राज्य स्तरीय युवा वक्ता, मॉडल ऑफ द ईयर 2024 और एली क्लब मिस्टर टीन इंडिया चैंपियन।</span>
                         </p>
                         <div class="hero-cta" style="display: flex; flex-wrap: wrap; gap: 1rem;">
-                            <a href="#achievements" class="btn btn-primary">My Achievements</a>
-                            <a href="#" onclick="window.print(); return false;" class="btn btn-outline"><i class="fa-solid fa-download" style="margin-right: 8px;"></i>Download CV</a>
-                            <a href="#contact" class="btn btn-outline">Work with me</a>
+                            <a href="#achievements" class="btn btn-primary">
+                                <span class="lang-en">My Achievements</span>
+                                <span class="lang-hi">मेरी उपलब्धियां</span>
+                            </a>
+                            <a href="#" onclick="window.print(); return false;" class="btn btn-outline">
+                                <i class="fa-solid fa-download" style="margin-right: 8px;"></i>
+                                <span class="lang-en">Download CV</span>
+                                <span class="lang-hi">सीवी डाउनलोड करें</span>
+                            </a>
+                            <a href="#contact" class="btn btn-outline">
+                                <span class="lang-en">Work with me</span>
+                                <span class="lang-hi">मुझसे संपर्क करें</span>
+                            </a>
                         </div>
                     </div>
                     <div class="hero-image-wrapper reveal">
@@ -70,8 +123,14 @@
         <section id="about" style="background: var(--bg-secondary);">
             <div class="container">
                 <div class="section-title">
-                    <span class="hero-label">The Journey</span>
-                    <h2>Evolution.</h2>
+                    <span class="hero-label">
+                        <span class="lang-en">The Journey</span>
+                        <span class="lang-hi">एक सफर</span>
+                    </span>
+                    <h2>
+                        <span class="lang-en">Evolution.</span>
+                        <span class="lang-hi">सफलता की यात्रा.</span>
+                    </h2>
                 </div>
                 <div class="responsive-grid two-cols" style="align-items: center;">
                     <div class="hero-image-wrapper reveal" style="order: 2; margin-top: 2rem;">
@@ -80,27 +139,39 @@
                     <div style="order: 1;">
                         <div class="glass-card reveal">
                             <p style="margin-bottom: 1.5rem; line-height: 1.6;">
-                                Originating from the town of Kursela, Katihar, my journey has been a continuous pursuit of leadership and artistic excellence. What began as a national breakthrough when I was crowned <strong>Mr. Teen India Popular</strong> in 2022 has evolved into a powerful multi-disciplinary career.
+                                <span class="lang-en">Originating from the town of Kursela, Katihar, my journey has been a continuous pursuit of leadership and artistic excellence. What began as a national breakthrough when I was crowned <strong>Mr. Teen India Popular</strong> in 2022 has evolved into a powerful multi-disciplinary career.</span>
+                                <span class="lang-hi">कटिहार के कुरसेला शहर से शुरू हुआ मेरा सफर, नेतृत्व और कलात्मक उत्कृष्टता की निरंतर खोज रहा है। साल 2022 में <strong>मिस्टर टीन इंडिया पॉपुलर</strong> का ताज पहनने के साथ शुरू हुई यह राष्ट्रीय सफलता अब एक बहुमुखी और प्रभावशाली करियर में बदल चुकी है।</span>
                             </p>
                             <p style="margin-bottom: 1.5rem; line-height: 1.6;">
-                                From walking national runways as <strong>Model of the Year 2024</strong> in Delhi to representing Katihar's youth inside the <strong>Bihar Legislative Assembly</strong> (Vidhan Sabha) as a Viksit Bharat Youth Parliament Speaker in 2026, I advocate for progressive youth leadership.
+                                <span class="lang-en">From walking national runways as <strong>Model of the Year 2024</strong> in Delhi to representing Katihar's youth inside the <strong>Bihar Legislative Assembly</strong> (Vidhan Sabha) as a Viksit Bharat Youth Parliament Speaker in 2026, I advocate for progressive youth leadership.</span>
+                                <span class="lang-hi">दिल्ली में <strong>मॉडल ऑफ द ईयर 2024</strong> के रूप में राष्ट्रीय रैंप पर चलने से लेकर 2026 में विकसित भारत युवा संसद वक्ता के रूप में <strong>बिहार विधानसभा</strong> के भीतर कटिहार के युवाओं का प्रतिनिधित्व करने तक, मैं प्रगतिशील युवा नेतृत्व की वकालत करता हूं।</span>
                             </p>
                             <p style="line-height: 1.6;">
-                                By blending public speaking distinction with high-fashion modeling, I bridge creative expression with constructive civic leadership on regional and national stages.
+                                <span class="lang-en">By blending public speaking distinction with high-fashion modeling, I bridge creative expression with constructive civic leadership on regional and national stages.</span>
+                                <span class="lang-hi">सशक्त जनभाषण कौशल और उच्च स्तरीय फैशन मॉडलिंग के अनूठे मेल से, मैं क्षेत्रीय और राष्ट्रीय मंचों पर रचनात्मक अभिव्यक्ति और रचनात्मक नागरिक नेतृत्व के बीच एक सेतु का निर्माण करता हूँ।</span>
                             </p>
                         </div>
                         <div class="stats-grid reveal" style="margin-top: 2rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;">
                             <div class="stat-card" style="padding: 1.2rem; text-align: center; background: rgba(255,255,255,0.02); border-radius: 12px; border: 1px solid var(--glass-border);">
                                 <h3 style="color: var(--accent-primary); font-size: 1.8rem; font-family: var(--font-primary); margin-bottom: 0.25rem;">2026</h3>
-                                <p style="font-size: 0.65rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 1px;">Assembly Speaker</p>
+                                <p style="font-size: 0.65rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 1px;">
+                                    <span class="lang-en">Assembly Speaker</span>
+                                    <span class="lang-hi">विधानसभा वक्ता</span>
+                                </p>
                             </div>
                             <div class="stat-card" style="padding: 1.2rem; text-align: center; background: rgba(255,255,255,0.02); border-radius: 12px; border: 1px solid var(--glass-border);">
                                 <h3 style="color: var(--accent-primary); font-size: 1.8rem; font-family: var(--font-primary); margin-bottom: 0.25rem;">1st</h3>
-                                <p style="font-size: 0.65rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 1px;">Oratory Gold</p>
+                                <p style="font-size: 0.65rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 1px;">
+                                    <span class="lang-en">Oratory Gold</span>
+                                    <span class="lang-hi">स्वर्ण पदक वक्ता</span>
+                                </p>
                             </div>
                             <div class="stat-card" style="padding: 1.2rem; text-align: center; background: rgba(255,255,255,0.02); border-radius: 12px; border: 1px solid var(--glass-border);">
                                 <h3 style="color: var(--accent-primary); font-size: 1.8rem; font-family: var(--font-primary); margin-bottom: 0.25rem;">2024</h3>
-                                <p style="font-size: 0.65rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 1px;">Model of the Year</p>
+                                <p style="font-size: 0.65rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 1px;">
+                                    <span class="lang-en">Model of the Year</span>
+                                    <span class="lang-hi">मॉडल ऑफ द ईयर</span>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -112,8 +183,14 @@
         <section id="achievements">
             <div class="container">
                 <div class="section-title">
-                    <span class="hero-label">Recognition</span>
-                    <h2>Milestones.</h2>
+                    <span class="hero-label">
+                        <span class="lang-en">Recognition</span>
+                        <span class="lang-hi">सम्मान</span>
+                    </span>
+                    <h2>
+                        <span class="lang-en">Milestones.</span>
+                        <span class="lang-hi">प्रमुख उपलब्धियां एवं सम्मान</span>
+                    </h2>
                 </div>
                 
                 <div class="timeline">
@@ -122,14 +199,29 @@
                         <div class="timeline-dot"></div>
                         <div class="timeline-date">2026</div>
                         <div class="timeline-card glass-card">
-                            <span class="achievement-badge">State Representation</span>
-                            <h3>Viksit Bharat Youth Parliament Speaker</h3>
-                            <p class="timeline-desc">Proudly represented Katihar District at the prestigious 2-day session at the Bihar Legislative Assembly (Vidhan Sabha), delivering a key development speech.</p>
+                            <span class="achievement-badge">
+                                <span class="lang-en">State Representation</span>
+                                <span class="lang-hi">राज्य प्रतिनिधित्व</span>
+                            </span>
+                            <h3>
+                                <span class="lang-en">Viksit Bharat Youth Parliament Speaker</span>
+                                <span class="lang-hi">विकसित भारत विधानसभा वक्ता</span>
+                            </h3>
+                            <p class="timeline-desc">
+                                <span class="lang-en">Proudly represented Katihar District at the prestigious 2-day session at the Bihar Legislative Assembly (Vidhan Sabha), delivering a key development speech.</span>
+                                <span class="lang-hi">बिहार विधानसभा (विधानसभा) में प्रतिष्ठित 2 दिवसीय सत्र में गौरवशाली रूप से कटिहार जिले का प्रतिनिधित्व किया और प्रगतिशील विकास भाषण दिया।</span>
+                            </p>
                             
                             <div class="timeline-guests">
-                                <span class="guest-label">Guests of Honor</span>
+                                <span class="guest-label">
+                                    <span class="lang-en">Guests of Honor</span>
+                                    <span class="lang-hi">मुख्य अतिथि</span>
+                                </span>
                                 <div class="guest-badges">
-                                    <span class="guest-badge">Nitish Mishra (Minister of Urban Development & Housing, Bihar)</span>
+                                    <span class="guest-badge">
+                                        <span class="lang-en">Nitish Mishra (Minister of Urban Development & Housing, Bihar)</span>
+                                        <span class="lang-hi">नीतीश मिश्रा (नगर विकास एवं आवास मंत्री, बिहार सरकार)</span>
+                                    </span>
                                 </div>
                             </div>
                             
@@ -162,15 +254,33 @@
                         <div class="timeline-dot"></div>
                         <div class="timeline-date">2025</div>
                         <div class="timeline-card glass-card">
-                            <span class="achievement-badge">Oratory Gold</span>
-                            <h3>Top Students Speaker Award 🥇</h3>
-                            <p class="timeline-desc">Secured the absolute first rank and top speaker gold medal at the Bihar Chhatra Sansad, commanding political debates and leadership policy discussions.</p>
+                            <span class="achievement-badge">
+                                <span class="lang-en">Oratory Gold</span>
+                                <span class="lang-hi">वक्तृत्व स्वर्ण पदक</span>
+                            </span>
+                            <h3>
+                                <span class="lang-en">Top Students Speaker Award 🥇</span>
+                                <span class="lang-hi">सर्वश्रेष्ठ छात्र वक्ता पुरस्कार 🥇</span>
+                            </h3>
+                            <p class="timeline-desc">
+                                <span class="lang-en">Secured the absolute first rank and top speaker gold medal at the Bihar Chhatra Sansad, commanding political debates and leadership policy discussions.</span>
+                                <span class="lang-hi">बिहार छात्र संसद में प्रथम स्थान और सर्वश्रेष्ठ वक्ता का स्वर्ण पदक हासिल किया, जिसमें राजनीतिक बहसों और नीतिगत चर्चाओं का नेतृत्व किया।</span>
+                            </p>
                             
                             <div class="timeline-guests">
-                                <span class="guest-label">Guests of Honor</span>
+                                <span class="guest-label">
+                                    <span class="lang-en">Guests of Honor</span>
+                                    <span class="lang-hi">मुख्य अतिथि</span>
+                                </span>
                                 <div class="guest-badges">
-                                    <span class="guest-badge">Anand Mishra (MLA & ex-IPS Officer)</span>
-                                    <span class="guest-badge">Shambhavi Choudhary (MP, Samastipur Loksabha)</span>
+                                    <span class="guest-badge">
+                                        <span class="lang-en">Anand Mishra (MLA & ex-IPS Officer)</span>
+                                        <span class="lang-hi">आनंद मिश्रा (विधायक एवं पूर्व आईपीएस अधिकारी)</span>
+                                    </span>
+                                    <span class="guest-badge">
+                                        <span class="lang-en">Shambhavi Choudhary (MP, Samastipur Loksabha)</span>
+                                        <span class="lang-hi">शाम्भवी चौधरी (सांसद, समस्तीपुर लोकसभा)</span>
+                                    </span>
                                 </div>
                             </div>
                             
@@ -194,14 +304,29 @@
                         <div class="timeline-dot"></div>
                         <div class="timeline-date">2025</div>
                         <div class="timeline-card glass-card">
-                            <span class="achievement-badge">Leadership Speech</span>
-                            <h3>Jayghosh Student Speaker 2025</h3>
-                            <p class="timeline-desc">Elected national student orator presenting powerful youth reform agendas at the world-renowned Bharat Mandapam, New Delhi.</p>
+                            <span class="achievement-badge">
+                                <span class="lang-en">Leadership Speech</span>
+                                <span class="lang-hi">नेतृत्व भाषण</span>
+                            </span>
+                            <h3>
+                                <span class="lang-en">Jayghosh Student Speaker 2025</span>
+                                <span class="lang-hi">जयघोष छात्र प्रतिनिधि 2025</span>
+                            </h3>
+                            <p class="timeline-desc">
+                                <span class="lang-en">Elected national student orator presenting powerful youth reform agendas at the world-renowned Bharat Mandapam, New Delhi.</span>
+                                <span class="lang-hi">विश्व प्रसिद्ध भारत मंडपम, नई दिल्ली में शक्तिशाली युवा सुधार एजेंडा पेश करने के लिए राष्ट्रीय छात्र वक्ता के रूप में चयनित।</span>
+                            </p>
                             
                             <div class="timeline-guests">
-                                <span class="guest-label">Guests of Honor</span>
+                                <span class="guest-label">
+                                    <span class="lang-en">Guests of Honor</span>
+                                    <span class="lang-hi">मुख्य अतिथि</span>
+                                </span>
                                 <div class="guest-badges">
-                                    <span class="guest-badge">Shweta Umre (National Youth Parliament Gold Medalist & Forensic Expert, Crime Branch Delhi Police)</span>
+                                    <span class="guest-badge">
+                                        <span class="lang-en">Shweta Umre (National Youth Parliament Gold Medalist & Forensic Expert, Crime Branch Delhi Police)</span>
+                                        <span class="lang-hi">श्वेता उमरे (राष्ट्रीय युवा संसद स्वर्ण पदक विजेता एवं फोरेंसिक विशेषज्ञ, दिल्ली पुलिस अपराध शाखा)</span>
+                                    </span>
                                 </div>
                             </div>
                             
@@ -219,14 +344,29 @@
                         <div class="timeline-dot"></div>
                         <div class="timeline-date">2024</div>
                         <div class="timeline-card glass-card">
-                            <span class="achievement-badge">Fashion & Runway</span>
-                            <h3>Model of the Year 2024</h3>
-                            <p class="timeline-desc">Crowned Model of the Year at the prestigious Iconic Fashion Runway Season-06 in Delhi, certifying major industry credentials.</p>
+                            <span class="achievement-badge">
+                                <span class="lang-en">Fashion & Runway</span>
+                                <span class="lang-hi">फैशन एवं रनवे</span>
+                            </span>
+                            <h3>
+                                <span class="lang-en">Model of the Year 2024</span>
+                                <span class="lang-hi">मॉडल ऑफ द ईयर 2024</span>
+                            </h3>
+                            <p class="timeline-desc">
+                                <span class="lang-en">Crowned Model of the Year at the prestigious Iconic Fashion Runway Season-06 in Delhi, certifying major industry credentials.</span>
+                                <span class="lang-hi">दिल्ली में आयोजित प्रतिष्ठित आइकॉनिक फैशन रनवे सीजन-06 में 'मॉडल ऑफ द ईयर' का खिताब जीता।</span>
+                            </p>
                             
                             <div class="timeline-guests">
-                                <span class="guest-label">Guests of Honor</span>
+                                <span class="guest-label">
+                                    <span class="lang-en">Guests of Honor</span>
+                                    <span class="lang-hi">मुख्य अतिथि</span>
+                                </span>
                                 <div class="guest-badges">
-                                    <span class="guest-badge">Archana Gautam (Bigg Boss 16 Fame & Actress)</span>
+                                    <span class="guest-badge">
+                                        <span class="lang-en">Archana Gautam (Bigg Boss 16 Fame & Actress)</span>
+                                        <span class="lang-hi">अर्चना गौतम (अभिनेत्री एवं बिग बॉस 16 फेम)</span>
+                                    </span>
                                 </div>
                             </div>
                             
@@ -250,9 +390,18 @@
                         <div class="timeline-dot"></div>
                         <div class="timeline-date">2023</div>
                         <div class="timeline-card glass-card">
-                            <span class="achievement-badge">National Honor</span>
-                            <h3>Bharat Gaurav Samman</h3>
-                            <p class="timeline-desc">Awarded the prestigious national pride honor for exemplary leadership, social initiatives, and serving as a positive role model for Indian youth.</p>
+                            <span class="achievement-badge">
+                                <span class="lang-en">National Honor</span>
+                                <span class="lang-hi">राष्ट्रीय सम्मान</span>
+                            </span>
+                            <h3>
+                                <span class="lang-en">Bharat Gaurav Samman</span>
+                                <span class="lang-hi">भारत गौरव सम्मान</span>
+                            </h3>
+                            <p class="timeline-desc">
+                                <span class="lang-en">Awarded the prestigious national pride honor for exemplary leadership, social initiatives, and serving as a positive role model for Indian youth.</span>
+                                <span class="lang-hi">अनुकरणीय नेतृत्व, सामाजिक कल्याणकारी कार्यों और भारतीय युवाओं के लिए एक रोल मॉडल बनने हेतु प्रतिष्ठित राष्ट्रीय सम्मान से नवाजा गया।</span>
+                            </p>
                             
                             <div class="timeline-media lightbox-trigger" data-lightbox-group="bharat_gaurav" src="images/achievements/bharat_gaurav_samman_2023_master.webp" data-lightbox-caption="Conferred with the Bharat Gaurav Samman 2023">
                                 <img src="images/achievements/bharat_gaurav_samman_2023_master.webp" alt="Bharat Gaurav Samman 2023 Ceremony">
@@ -268,16 +417,37 @@
                         <div class="timeline-dot"></div>
                         <div class="timeline-date">2023</div>
                         <div class="timeline-card glass-card">
-                            <span class="achievement-badge">Cultural Excellence</span>
-                            <h3>Genius Artist of India 2023</h3>
-                            <p class="timeline-desc">Conferred with the artistic distinction award in Haryana, recognizing outstanding creative impact and cultural presentation.</p>
+                            <span class="achievement-badge">
+                                <span class="lang-en">Cultural Excellence</span>
+                                <span class="lang-hi">सांस्कृतिक उत्कृष्टता</span>
+                            </span>
+                            <h3>
+                                <span class="lang-en">Genius Artist of India 2023</span>
+                                <span class="lang-hi">जीनियस आर्टिस्ट ऑफ इंडिया 2023</span>
+                            </h3>
+                            <p class="timeline-desc">
+                                <span class="lang-en">Conferred with the artistic distinction award in Haryana, recognizing outstanding creative impact and cultural presentation.</span>
+                                <span class="lang-hi">हरियाणा में कलात्मक विशिष्टता पुरस्कार से सम्मानित, उत्कृष्ट रचनात्मक प्रभाव और सामाजिक जागरूकता के समन्वय के लिए।</span>
+                            </p>
                             
                             <div class="timeline-guests">
-                                <span class="guest-label">Guests of Honor</span>
+                                <span class="guest-label">
+                                    <span class="lang-en">Guests of Honor</span>
+                                    <span class="lang-hi">मुख्य अतिथि</span>
+                                </span>
                                 <div class="guest-badges">
-                                    <span class="guest-badge">Former Ambassador of Jordan, Libya & Malta</span>
-                                    <span class="guest-badge">Anupama Trigunayat (WFAC President)</span>
-                                    <span class="guest-badge">Dr. CP Yadav (Famous Magician)</span>
+                                    <span class="guest-badge">
+                                        <span class="lang-en">Former Ambassador of Jordan, Libya & Malta</span>
+                                        <span class="lang-hi">जॉर्डन, लीबिया और माल्टा के पूर्व राजदूत</span>
+                                    </span>
+                                    <span class="guest-badge">
+                                        <span class="lang-en">Anupama Trigunayat (WFAC President)</span>
+                                        <span class="lang-hi">अनुपमा त्रिगुणायत (WFAC अध्यक्ष)</span>
+                                    </span>
+                                    <span class="guest-badge">
+                                        <span class="lang-en">Dr. CP Yadav (Famous Magician)</span>
+                                        <span class="lang-hi">डॉ. सीपी यादव (प्रसिद्ध जादूगर)</span>
+                                    </span>
                                 </div>
                             </div>
                             
@@ -295,16 +465,31 @@
                         <div class="timeline-dot"></div>
                         <div class="timeline-date">2022</div>
                         <div class="timeline-card glass-card">
-                            <span class="achievement-badge">People's Choice</span>
-                            <h3>Mr Teen India Popular 2022</h3>
-                            <p class="timeline-desc">Honored with the People's Choice national title, displaying immense public voting appeal and cross-regional fan support.</p>
+                            <span class="achievement-badge">
+                                <span class="lang-en">People's Choice</span>
+                                <span class="lang-hi">लोकप्रिय पसंद</span>
+                            </span>
+                            <h3>
+                                <span class="lang-en">Mr Teen India Popular 2022</span>
+                                <span class="lang-hi">मिस्टर टीन इंडिया पॉपुलर 2022</span>
+                            </h3>
+                            <p class="timeline-desc">
+                                <span class="lang-en">Honored with the People's Choice national title, displaying immense public voting appeal and cross-regional fan support.</span>
+                                <span class="lang-hi">देशव्यापी जनमत और जनसमर्थन के आधार पर 'मिस्टर टीन इंडिया पॉपुलर' के प्रतिष्ठित राष्ट्रीय खिताब से नवाजा गया।</span>
+                            </p>
                             
                             <div class="timeline-guests">
-                                <span class="guest-label">Guests of Honor</span>
+                                <span class="guest-label">
+                                    <span class="lang-en">Guests of Honor</span>
+                                    <span class="lang-hi">मुख्य अतिथि</span>
+                                </span>
                                 <div class="guest-badges">
                                     <span class="guest-badge">Ayub Khan</span>
                                     <span class="guest-badge">Pooja Banerjee</span>
-                                    <span class="guest-badge">Sambita Bose (Alee Club Director)</span>
+                                    <span class="guest-badge">
+                                        <span class="lang-en">Sambita Bose (Alee Club Director)</span>
+                                        <span class="lang-hi">संबिता बोस (एली क्लब निदेशक)</span>
+                                    </span>
                                 </div>
                             </div>
                             
@@ -322,12 +507,24 @@
                         <div class="timeline-dot"></div>
                         <div class="timeline-date">2022</div>
                         <div class="timeline-card glass-card">
-                            <span class="achievement-badge">National Title</span>
-                            <h3>Mr Teen India 2022</h3>
-                            <p class="timeline-desc">National champion title winner at the 24th Miss & Mr Teen India national showcase, representing excellence on a grand stage.</p>
+                            <span class="achievement-badge">
+                                <span class="lang-en">National Title</span>
+                                <span class="lang-hi">राष्ट्रीय खिताब</span>
+                            </span>
+                            <h3>
+                                <span class="lang-en">Mr Teen India 2022</span>
+                                <span class="lang-hi">मिस्टर टीन इंडिया 2022</span>
+                            </h3>
+                            <p class="timeline-desc">
+                                <span class="lang-en">National champion title winner at the 24th Miss & Mr Teen India national showcase, representing excellence on a grand stage.</span>
+                                <span class="lang-hi">24वें मिस एंड मिस्टर टीन इंडिया राष्ट्रीय शोकेस में राष्ट्रीय उपविजेता और मुख्य रनवे फाइनलिस्ट के रूप में उत्कृष्टता का प्रदर्शन।</span>
+                            </p>
                             
                             <div class="timeline-guests">
-                                <span class="guest-label">Guests of Honor</span>
+                                <span class="guest-label">
+                                    <span class="lang-en">Guests of Honor</span>
+                                    <span class="lang-hi">मुख्य अतिथि</span>
+                                </span>
                                 <div class="guest-badges">
                                     <span class="guest-badge">Tushar Kapoor</span>
                                     <span class="guest-badge">Shahbaz Khan</span>
@@ -367,8 +564,14 @@
         <section id="profile" style="background: var(--bg-primary);">
             <div class="container">
                 <div class="section-title">
-                    <span class="hero-label">Biography Details</span>
-                    <h2>Profile Details.</h2>
+                    <span class="hero-label">
+                        <span class="lang-en">Biography Details</span>
+                        <span class="lang-hi">जीवनी विवरण</span>
+                    </span>
+                    <h2>
+                        <span class="lang-en">Profile Details.</span>
+                        <span class="lang-hi">प्रोफ़ाइल विवरण.</span>
+                    </h2>
                 </div>
                 
                 <div class="responsive-grid three-cols reveal">
@@ -376,16 +579,31 @@
                     <div class="glass-card" style="padding: 2rem; height: 100%;">
                         <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1.5rem;">
                             <i class="fa-solid fa-graduation-cap" style="color: var(--accent-primary); font-size: 1.5rem;"></i>
-                            <h3 style="font-family: var(--font-primary); font-size: 1.25rem; font-weight: 700; color: var(--text-main); margin: 0;">Education & Leadership</h3>
+                            <h3 style="font-family: var(--font-primary); font-size: 1.25rem; font-weight: 700; color: var(--text-main); margin: 0;">
+                                <span class="lang-en">Education & Leadership</span>
+                                <span class="lang-hi">शिक्षा एवं नेतृत्व</span>
+                            </h3>
                         </div>
                         <div style="margin-bottom: 1.25rem;">
                             <span style="font-size: 0.75rem; color: var(--accent-primary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">2023 - 2026</span>
-                            <h4 style="font-size: 1rem; color: var(--text-main); margin: 2px 0 4px 0; font-weight: 600;">B.A. Political Science (Honors)</h4>
-                            <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin: 0;">B.N. College, Bhagalpur</p>
+                            <h4 style="font-size: 1rem; color: var(--text-main); margin: 2px 0 4px 0; font-weight: 600;">
+                                <span class="lang-en">B.A. Political Science (Honors)</span>
+                                <span class="lang-hi">बी.ए. राजनीति विज्ञान (प्रतिष्ठा)</span>
+                            </h4>
+                            <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin: 0;">
+                                <span class="lang-en">B.N. College, Bhagalpur</span>
+                                <span class="lang-hi">बी.एन. कॉलेज, भागलपुर</span>
+                            </p>
                         </div>
                         <div style="border-top: 1px solid var(--glass-border); padding-top: 1.25rem;">
-                            <h4 style="font-size: 1rem; color: var(--text-main); margin: 0 0 6px 0; font-weight: 600;">Student Union Leader</h4>
-                            <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin: 0;">Representing student welfare, organizing academic councils and local bodies.</p>
+                            <h4 style="font-size: 1rem; color: var(--text-main); margin: 0 0 6px 0; font-weight: 600;">
+                                <span class="lang-en">Student Union Leader</span>
+                                <span class="lang-hi">छात्र संघ नेता</span>
+                            </h4>
+                            <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin: 0;">
+                                <span class="lang-en">Representing student welfare, organizing academic councils and local bodies.</span>
+                                <span class="lang-hi">छात्र कल्याण का प्रतिनिधित्व, शैक्षणिक परिषदों और स्थानीय निकायों का सफल संचालन।</span>
+                            </p>
                         </div>
                     </div>
 
@@ -393,20 +611,50 @@
                     <div class="glass-card" style="padding: 2rem; height: 100%;">
                         <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1.5rem;">
                             <i class="fa-solid fa-bolt" style="color: var(--accent-primary); font-size: 1.5rem;"></i>
-                            <h3 style="font-family: var(--font-primary); font-size: 1.25rem; font-weight: 700; color: var(--text-main); margin: 0;">Core Strengths</h3>
+                            <h3 style="font-family: var(--font-primary); font-size: 1.25rem; font-weight: 700; color: var(--text-main); margin: 0;">
+                                <span class="lang-en">Core Strengths</span>
+                                <span class="lang-hi">मुख्य ताकत</span>
+                            </h3>
                         </div>
                         <div style="display: flex; flex-wrap: wrap; gap: 0.6rem;">
-                            <span class="skill-badge" style="padding: 0.4rem 0.85rem; font-size: 0.75rem;">Leadership</span>
-                            <span class="skill-badge" style="padding: 0.4rem 0.85rem; font-size: 0.75rem;">Public Speaking</span>
-                            <span class="skill-badge" style="padding: 0.4rem 0.85rem; font-size: 0.75rem;">Social Awareness</span>
-                            <span class="skill-badge" style="padding: 0.4rem 0.85rem; font-size: 0.75rem;">Event Organization</span>
-                            <span class="skill-badge" style="padding: 0.4rem 0.85rem; font-size: 0.75rem;">Team Management</span>
-                            <span class="skill-badge" style="padding: 0.4rem 0.85rem; font-size: 0.75rem;">Problem Solving</span>
-                            <span class="skill-badge" style="padding: 0.4rem 0.85rem; font-size: 0.75rem;">Time Management</span>
+                            <span class="skill-badge" style="padding: 0.4rem 0.85rem; font-size: 0.75rem;">
+                                <span class="lang-en">Leadership</span>
+                                <span class="lang-hi">नेतृत्व</span>
+                            </span>
+                            <span class="skill-badge" style="padding: 0.4rem 0.85rem; font-size: 0.75rem;">
+                                <span class="lang-en">Public Speaking</span>
+                                <span class="lang-hi">जनभाषण कौशल</span>
+                            </span>
+                            <span class="skill-badge" style="padding: 0.4rem 0.85rem; font-size: 0.75rem;">
+                                <span class="lang-en">Social Awareness</span>
+                                <span class="lang-hi">सामाजिक जागरूकता</span>
+                            </span>
+                            <span class="skill-badge" style="padding: 0.4rem 0.85rem; font-size: 0.75rem;">
+                                <span class="lang-en">Event Organization</span>
+                                <span class="lang-hi">कार्यक्रम आयोजन</span>
+                            </span>
+                            <span class="skill-badge" style="padding: 0.4rem 0.85rem; font-size: 0.75rem;">
+                                <span class="lang-en">Team Management</span>
+                                <span class="lang-hi">टीम प्रबंधन</span>
+                            </span>
+                            <span class="skill-badge" style="padding: 0.4rem 0.85rem; font-size: 0.75rem;">
+                                <span class="lang-en">Problem Solving</span>
+                                <span class="lang-hi">समस्या निवारण</span>
+                            </span>
+                            <span class="skill-badge" style="padding: 0.4rem 0.85rem; font-size: 0.75rem;">
+                                <span class="lang-en">Time Management</span>
+                                <span class="lang-hi">समय प्रबंधन</span>
+                            </span>
                         </div>
                         <div style="border-top: 1px solid var(--glass-border); padding-top: 1.25rem; margin-top: 1.25rem;">
-                            <h4 style="font-size: 1rem; color: var(--text-main); margin: 0 0 4px 0; font-weight: 600;">Linguistic Proficiency</h4>
-                            <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin: 0;">Hindi (Fluent), English (Fluent)</p>
+                            <h4 style="font-size: 1rem; color: var(--text-main); margin: 0 0 4px 0; font-weight: 600;">
+                                <span class="lang-en">Linguistic Proficiency</span>
+                                <span class="lang-hi">भाषाई दक्षता</span>
+                            </h4>
+                            <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin: 0;">
+                                <span class="lang-en">Hindi (Fluent), English (Fluent)</span>
+                                <span class="lang-hi">हिंदी (प्रवाहपूर्ण), अंग्रेजी (प्रवाहपूर्ण)</span>
+                            </p>
                         </div>
                     </div>
 
@@ -414,20 +662,44 @@
                     <div class="glass-card" style="padding: 2rem; height: 100%;">
                         <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1.5rem;">
                             <i class="fa-solid fa-heart" style="color: var(--accent-primary); font-size: 1.5rem;"></i>
-                            <h3 style="font-family: var(--font-primary); font-size: 1.25rem; font-weight: 700; color: var(--text-main); margin: 0;">Interests & Details</h3>
+                            <h3 style="font-family: var(--font-primary); font-size: 1.25rem; font-weight: 700; color: var(--text-main); margin: 0;">
+                                <span class="lang-en">Interests & Details</span>
+                                <span class="lang-hi">रुचि एवं विवरण</span>
+                            </h3>
                         </div>
                         <div style="margin-bottom: 1.25rem;">
-                            <h4 style="font-size: 1rem; color: var(--text-main); margin: 0 0 6px 0; font-weight: 600;">Hobbies</h4>
+                            <h4 style="font-size: 1rem; color: var(--text-main); margin: 0 0 6px 0; font-weight: 600;">
+                                <span class="lang-en">Hobbies</span>
+                                <span class="lang-hi">शौक</span>
+                            </h4>
                             <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-                                <span style="background: rgba(255,255,255,0.03); padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 0.75rem; color: var(--text-muted); border: 1px solid rgba(255,255,255,0.05);"><i class="fa-solid fa-book" style="margin-right: 4px; color: var(--accent-primary);"></i> Reading</span>
-                                <span style="background: rgba(255,255,255,0.03); padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 0.75rem; color: var(--text-muted); border: 1px solid rgba(255,255,255,0.05);"><i class="fa-solid fa-camera" style="margin-right: 4px; color: var(--accent-primary);"></i> Photo</span>
-                                <span style="background: rgba(255,255,255,0.03); padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 0.75rem; color: var(--text-muted); border: 1px solid rgba(255,255,255,0.05);"><i class="fa-solid fa-plane" style="margin-right: 4px; color: var(--accent-primary);"></i> Travel</span>
-                                <span style="background: rgba(255,255,255,0.03); padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 0.75rem; color: var(--text-muted); border: 1px solid rgba(255,255,255,0.05);"><i class="fa-solid fa-dumbbell" style="margin-right: 4px; color: var(--accent-primary);"></i> Fitness</span>
+                                <span style="background: rgba(255,255,255,0.03); padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 0.75rem; color: var(--text-muted); border: 1px solid rgba(255,255,255,0.05);">
+                                    <i class="fa-solid fa-book" style="margin-right: 4px; color: var(--accent-primary);"></i>
+                                    <span class="lang-en">Reading</span><span class="lang-hi">पढ़ना</span>
+                                </span>
+                                <span style="background: rgba(255,255,255,0.03); padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 0.75rem; color: var(--text-muted); border: 1px solid rgba(255,255,255,0.05);">
+                                    <i class="fa-solid fa-camera" style="margin-right: 4px; color: var(--accent-primary);"></i>
+                                    <span class="lang-en">Photo</span><span class="lang-hi">फोटोग्राफी</span>
+                                </span>
+                                <span style="background: rgba(255,255,255,0.03); padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 0.75rem; color: var(--text-muted); border: 1px solid rgba(255,255,255,0.05);">
+                                    <i class="fa-solid fa-plane" style="margin-right: 4px; color: var(--accent-primary);"></i>
+                                    <span class="lang-en">Travel</span><span class="lang-hi">यात्रा</span>
+                                </span>
+                                <span style="background: rgba(255,255,255,0.03); padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 0.75rem; color: var(--text-muted); border: 1px solid rgba(255,255,255,0.05);">
+                                    <i class="fa-solid fa-dumbbell" style="margin-right: 4px; color: var(--accent-primary);"></i>
+                                    <span class="lang-en">Fitness</span><span class="lang-hi">फिटनेस</span>
+                                </span>
                             </div>
                         </div>
                         <div style="border-top: 1px solid var(--glass-border); padding-top: 1.25rem;">
-                            <h4 style="font-size: 1rem; color: var(--text-main); margin: 0 0 6px 0; font-weight: 600;">Community Impact</h4>
-                            <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin: 0;">Community Social Worker conducting rural education campaigns in Katihar blocks.</p>
+                            <h4 style="font-size: 1rem; color: var(--text-main); margin: 0 0 6px 0; font-weight: 600;">
+                                <span class="lang-en">Community Impact</span>
+                                <span class="lang-hi">सामाजिक प्रभाव</span>
+                            </h4>
+                            <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin: 0;">
+                                <span class="lang-en">Community Social Worker conducting rural education campaigns in Katihar blocks.</span>
+                                <span class="lang-hi">कटिहार के ग्रामीण ब्लॉकों में शिक्षा और स्वास्थ्य जागरूकता अभियान चलाने वाले सक्रिय सामाजिक कार्यकर्ता।</span>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -438,69 +710,75 @@
         <section id="gallery" style="background: var(--bg-secondary);">
             <div class="container">
                 <div class="section-title">
-                    <span class="hero-label">Portfolio</span>
-                    <h2>Gallery.</h2>
+                    <span class="hero-label">
+                        <span class="lang-en">Portfolio</span>
+                        <span class="lang-hi">पोर्टफोलियो</span>
+                    </span>
+                    <h2>
+                        <span class="lang-en">Gallery.</span>
+                        <span class="lang-hi">चित्र दीर्घा</span>
+                    </h2>
                 </div>
                 
                 <!-- Continuous Infinite Horizontal Marquee Carousel -->
                 <div class="marquee-container reveal">
                     <div class="marquee-track">
                         <!-- Slide 1 -->
-                        <div class="marquee-item lightbox-trigger" data-lightbox-group="marquee_gallery" src="images/achievements/viksit_bharat_youth_parliament_2026_master.webp" data-lightbox-caption="Addressing Bihar Legislative Assembly Patna representing Katihar District">
+                        <div class="marquee-item lightbox-trigger" data-lightbox-group="marquee_gallery" src="images/achievements/viksit_bharat_youth_parliament_2026_master.webp" data-lightbox-caption-en="Addressing Bihar Legislative Assembly Patna representing Katihar District" data-lightbox-caption-hi="कटिहार जिले का प्रतिनिधित्व करते हुए बिहार विधानसभा, पटना को संबोधित करते हुए">
                             <img src="images/achievements/viksit_bharat_youth_parliament_2026_master.webp" alt="Viksit Bharat Speaker 2026">
                         </div>
                         <!-- Slide 2 -->
-                        <div class="marquee-item lightbox-trigger" data-lightbox-group="marquee_gallery" src="images/achievements/bihar_chhatra_sansad_2025_master.webp" data-lightbox-caption="Bihar Chhatra Sansad 2025 Top Speaker Gold Medal moment">
+                        <div class="marquee-item lightbox-trigger" data-lightbox-group="marquee_gallery" src="images/achievements/bihar_chhatra_sansad_2025_master.webp" data-lightbox-caption-en="Bihar Chhatra Sansad 2025 Top Speaker Gold Medal moment" data-lightbox-caption-hi="बिहार छात्र संसद 2025 में सर्वश्रेष्ठ वक्ता स्वर्ण पदक प्राप्त करते हुए">
                             <img src="images/achievements/bihar_chhatra_sansad_2025_master.webp" alt="Bihar Chhatra Sansad 2025">
                         </div>
                         <!-- Slide 3 -->
-                        <div class="marquee-item lightbox-trigger" data-lightbox-group="marquee_gallery" src="images/achievements/jayghosh_student_speaker_2025_master.webp" data-lightbox-caption="Jayghosh Student Speaker at Bharat Mandapam, New Delhi">
+                        <div class="marquee-item lightbox-trigger" data-lightbox-group="marquee_gallery" src="images/achievements/jayghosh_student_speaker_2025_master.webp" data-lightbox-caption-en="Jayghosh Student Speaker at Bharat Mandapam, New Delhi" data-lightbox-caption-hi="भारत मंडपम, नई दिल्ली में जयघोष राष्ट्रीय छात्र वक्ता के रूप में">
                             <img src="images/achievements/jayghosh_student_speaker_2025_master.webp" alt="Jayghosh Student Speaker 2025">
                         </div>
                         <!-- Slide 4 -->
-                        <div class="marquee-item lightbox-trigger" data-lightbox-group="marquee_gallery" src="images/achievements/model_of_the_year_2024_master.webp" data-lightbox-caption="Crowned Model of the Year 2024 at Delhi Runway">
+                        <div class="marquee-item lightbox-trigger" data-lightbox-group="marquee_gallery" src="images/achievements/model_of_the_year_2024_master.webp" data-lightbox-caption-en="Crowned Model of the Year 2024 at Delhi Runway" data-lightbox-caption-hi="दिल्ली में आयोजित रनवे पर 'मॉडल ऑफ द ईयर 2024' का ताज हासिल करते हुए">
                             <img src="images/achievements/model_of_the_year_2024_master.webp" alt="Model of the Year 2024">
                         </div>
                         <!-- Slide 5 -->
-                        <div class="marquee-item lightbox-trigger" data-lightbox-group="marquee_gallery" src="images/achievements/bharat_gaurav_samman_2023_master.webp" data-lightbox-caption="Bharat Gaurav Samman 2023 Honor Conferred">
+                        <div class="marquee-item lightbox-trigger" data-lightbox-group="marquee_gallery" src="images/achievements/bharat_gaurav_samman_2023_master.webp" data-lightbox-caption-en="Bharat Gaurav Samman 2023 Honor Conferred" data-lightbox-caption-hi="राष्ट्रीय 'भारत गौरव सम्मान 2023' से विभूषित किए जाने का क्षण">
                             <img src="images/achievements/bharat_gaurav_samman_2023_master.webp" alt="Bharat Gaurav Samman 2023">
                         </div>
                         <!-- Slide 6 -->
-                        <div class="marquee-item lightbox-trigger" data-lightbox-group="marquee_gallery" src="images/achievements/genius_artist_india_2023_master.webp" data-lightbox-caption="Genius Artist of India 2023 Cultural Award">
+                        <div class="marquee-item lightbox-trigger" data-lightbox-group="marquee_gallery" src="images/achievements/genius_artist_india_2023_master.webp" data-lightbox-caption-en="Genius Artist of India 2023 Cultural Award" data-lightbox-caption-hi="जीनियस आर्टिस्ट ऑफ इंडिया 2023 सांस्कृतिक उत्कृष्टता सम्मान">
                             <img src="images/achievements/genius_artist_india_2023_master.webp" alt="Genius Artist of India 2023">
                         </div>
                         <!-- Slide 7 -->
-                        <div class="marquee-item lightbox-trigger" data-lightbox-group="marquee_gallery" src="images/achievements/mr_teen_india_popular_2022_master.webp" data-lightbox-caption="Mr Teen India Popular 2022 Presentation Ceremony">
+                        <div class="marquee-item lightbox-trigger" data-lightbox-group="marquee_gallery" src="images/achievements/mr_teen_india_popular_2022_master.webp" data-lightbox-caption-en="Mr Teen India Popular 2022 Presentation Ceremony" data-lightbox-caption-hi="मिस्टर टीन इंडिया पॉपुलर 2022 के मुख्य मंच पर ताजपोशी का क्षण">
                             <img src="images/achievements/mr_teen_india_popular_2022_master.webp" alt="Mr Teen India Popular 2022">
                         </div>
                         <!-- Slide 8 -->
-                        <div class="marquee-item lightbox-trigger" data-lightbox-group="marquee_gallery" src="images/achievements/mr_teen_india_2022_master.webp" data-lightbox-caption="Winning moment at Alee Club Mr Teen India 2022">
+                        <div class="marquee-item lightbox-trigger" data-lightbox-group="marquee_gallery" src="images/achievements/mr_teen_india_2022_master.webp" data-lightbox-caption-en="Winning moment at Alee Club Mr Teen India 2022" data-lightbox-caption-hi="एली क्लब मिस्टर टीन इंडिया 2022 का राष्ट्रीय खिताब जीतने का क्षण">
                             <img src="images/achievements/mr_teen_india_2022_master.webp" alt="Mr Teen India 2022 Winner">
                         </div>
 
                         <!-- DUPLICATED CORE SET (For seamless infinite marquee scroll looping) -->
-                        <div class="marquee-item lightbox-trigger" data-lightbox-group="marquee_gallery" src="images/achievements/viksit_bharat_youth_parliament_2026_master.webp" data-lightbox-caption="Addressing Bihar Legislative Assembly Patna representing Katihar District">
+                        <div class="marquee-item lightbox-trigger" data-lightbox-group="marquee_gallery" src="images/achievements/viksit_bharat_youth_parliament_2026_master.webp" data-lightbox-caption-en="Addressing Bihar Legislative Assembly Patna representing Katihar District" data-lightbox-caption-hi="कटिहार जिले का प्रतिनिधित्व करते हुए बिहार विधानसभा, पटना को संबोधित करते हुए">
                             <img src="images/achievements/viksit_bharat_youth_parliament_2026_master.webp" alt="Viksit Bharat Speaker 2026 Duplicated">
                         </div>
-                        <div class="marquee-item lightbox-trigger" data-lightbox-group="marquee_gallery" src="images/achievements/bihar_chhatra_sansad_2025_master.webp" data-lightbox-caption="Bihar Chhatra Sansad 2025 Top Speaker Gold Medal moment">
+                        <div class="marquee-item lightbox-trigger" data-lightbox-group="marquee_gallery" src="images/achievements/bihar_chhatra_sansad_2025_master.webp" data-lightbox-caption-en="Bihar Chhatra Sansad 2025 Top Speaker Gold Medal moment" data-lightbox-caption-hi="बिहार छात्र संसद 2025 में सर्वश्रेष्ठ वक्ता स्वर्ण पदक प्राप्त करते हुए">
                             <img src="images/achievements/bihar_chhatra_sansad_2025_master.webp" alt="Bihar Chhatra Sansad 2025 Duplicated">
                         </div>
-                        <div class="marquee-item lightbox-trigger" data-lightbox-group="marquee_gallery" src="images/achievements/jayghosh_student_speaker_2025_master.webp" data-lightbox-caption="Jayghosh Student Speaker at Bharat Mandapam, New Delhi">
+                        <div class="marquee-item lightbox-trigger" data-lightbox-group="marquee_gallery" src="images/achievements/jayghosh_student_speaker_2025_master.webp" data-lightbox-caption-en="Jayghosh Student Speaker at Bharat Mandapam, New Delhi" data-lightbox-caption-hi="भारत मंडपम, नई दिल्ली में जयघोष राष्ट्रीय छात्र वक्ता के रूप में">
                             <img src="images/achievements/jayghosh_student_speaker_2025_master.webp" alt="Jayghosh Student Speaker 2025 Duplicated">
                         </div>
-                        <div class="marquee-item lightbox-trigger" data-lightbox-group="marquee_gallery" src="images/achievements/model_of_the_year_2024_master.webp" data-lightbox-caption="Crowned Model of the Year 2024 at Delhi Runway">
+                        <div class="marquee-item lightbox-trigger" data-lightbox-group="marquee_gallery" src="images/achievements/model_of_the_year_2024_master.webp" data-lightbox-caption-en="Crowned Model of the Year 2024 at Delhi Runway" data-lightbox-caption-hi="दिल्ली में आयोजित रनवे पर 'मॉडल ऑफ द ईयर 2024' का ताज हासिल करते हुए">
                             <img src="images/achievements/model_of_the_year_2024_master.webp" alt="Model of the Year 2024 Duplicated">
                         </div>
-                        <div class="marquee-item lightbox-trigger" data-lightbox-group="marquee_gallery" src="images/achievements/bharat_gaurav_samman_2023_master.webp" data-lightbox-caption="Bharat Gaurav Samman 2023 Honor Conferred">
+                        <div class="marquee-item lightbox-trigger" data-lightbox-group="marquee_gallery" src="images/achievements/bharat_gaurav_samman_2023_master.webp" data-lightbox-caption-en="Bharat Gaurav Samman 2023 Honor Conferred" data-lightbox-caption-hi="राष्ट्रीय 'भारत गौरव सम्मान 2023' से विभूषित किए जाने का क्षण">
                             <img src="images/achievements/bharat_gaurav_samman_2023_master.webp" alt="Bharat Gaurav Samman 2023 Duplicated">
                         </div>
-                        <div class="marquee-item lightbox-trigger" data-lightbox-group="marquee_gallery" src="images/achievements/genius_artist_india_2023_master.webp" data-lightbox-caption="Genius Artist of India 2023 Cultural Award">
+                        <div class="marquee-item lightbox-trigger" data-lightbox-group="marquee_gallery" src="images/achievements/genius_artist_india_2023_master.webp" data-lightbox-caption-en="Genius Artist of India 2023 Cultural Award" data-lightbox-caption-hi="जीनियस आर्टिस्ट ऑफ इंडिया 2023 सांस्कृतिक उत्कृष्टता सम्मान">
                             <img src="images/achievements/genius_artist_india_2023_master.webp" alt="Genius Artist of India 2023 Duplicated">
                         </div>
-                        <div class="marquee-item lightbox-trigger" data-lightbox-group="marquee_gallery" src="images/achievements/mr_teen_india_popular_2022_master.webp" data-lightbox-caption="Mr Teen India Popular 2022 Presentation Ceremony">
+                        <div class="marquee-item lightbox-trigger" data-lightbox-group="marquee_gallery" src="images/achievements/mr_teen_india_popular_2022_master.webp" data-lightbox-caption-en="Mr Teen India Popular 2022 Presentation Ceremony" data-lightbox-caption-hi="मिस्टर टीन इंडिया पॉपुलर 2022 के मुख्य मंच पर ताजपोशी का क्षण">
                             <img src="images/achievements/mr_teen_india_popular_2022_master.webp" alt="Mr Teen India Popular 2022 Duplicated">
                         </div>
-                        <div class="marquee-item lightbox-trigger" data-lightbox-group="marquee_gallery" src="images/achievements/mr_teen_india_2022_master.webp" data-lightbox-caption="Winning moment at Alee Club Mr Teen India 2022">
+                        <div class="marquee-item lightbox-trigger" data-lightbox-group="marquee_gallery" src="images/achievements/mr_teen_india_2022_master.webp" data-lightbox-caption-en="Winning moment at Alee Club Mr Teen India 2022" data-lightbox-caption-hi="एली क्लब मिस्टर टीन इंडिया 2022 का राष्ट्रीय खिताब जीतने का क्षण">
                             <img src="images/achievements/mr_teen_india_2022_master.webp" alt="Mr Teen India 2022 Winner Duplicated">
                         </div>
                     </div>
@@ -508,90 +786,174 @@
 
                 <!-- Gallery Category Filtering Tabs -->
                 <div class="gallery-filters reveal" style="display: flex; justify-content: center; gap: 0.8rem; margin-bottom: 3rem; flex-wrap: wrap;">
-                    <button class="filter-btn active" data-filter="all">All Photos</button>
-                    <button class="filter-btn" data-filter="speaking">Oratory & Assembly</button>
-                    <button class="filter-btn" data-filter="runway">Runway & Pageants</button>
-                    <button class="filter-btn" data-filter="leadership">Leadership & Impact</button>
+                    <button class="filter-btn active" data-filter="all">
+                        <span class="lang-en">All Photos</span>
+                        <span class="lang-hi">सभी तस्वीरें</span>
+                    </button>
+                    <button class="filter-btn" data-filter="speaking">
+                        <span class="lang-en">Oratory & Assembly</span>
+                        <span class="lang-hi">जनभाषण एवं विधानसभा</span>
+                    </button>
+                    <button class="filter-btn" data-filter="runway">
+                        <span class="lang-en">Runway & Pageants</span>
+                        <span class="lang-hi">रैंप वॉक एवं पेजेंट</span>
+                    </button>
+                    <button class="filter-btn" data-filter="leadership">
+                        <span class="lang-en">Leadership & Impact</span>
+                        <span class="lang-hi">नेतृत्व एवं सामाजिक प्रभाव</span>
+                    </button>
                 </div>
                 
                 <div class="gallery-grid reveal">
                     <!-- Gallery Item 8 -->
-                    <div class="gallery-item lightbox-trigger" data-category="speaking leadership" data-lightbox-group="portfolio_gallery" src="images/achievements/viksit_bharat_youth_parliament_2026_master.webp" data-lightbox-caption="Addressing Bihar Legislative Assembly Patna representing Katihar District">
+                    <div class="gallery-item lightbox-trigger" data-category="speaking leadership" data-lightbox-group="portfolio_gallery" src="images/achievements/viksit_bharat_youth_parliament_2026_master.webp" data-lightbox-caption-en="Addressing Bihar Legislative Assembly Patna representing Katihar District" data-lightbox-caption-hi="कटिहार जिले का प्रतिनिधित्व करते हुए बिहार विधानसभा, पटना को संबोधित करते हुए">
                         <img src="images/achievements/viksit_bharat_youth_parliament_2026_master.webp" alt="Viksit Bharat Youth Parliament 2026 Address">
                         <div class="gallery-overlay">
-                            <span class="gallery-tag">Oratory</span>
-                            <h4>Viksit Bharat Speaker</h4>
-                            <p>Bihar Legislative Assembly 2-day address representing Katihar District</p>
+                            <span class="gallery-tag">
+                                <span class="lang-en">Oratory</span>
+                                <span class="lang-hi">वक्तृत्व कला</span>
+                            </span>
+                            <h4>
+                                <span class="lang-en">Viksit Bharat Speaker</span>
+                                <span class="lang-hi">विकसित भारत वक्ता</span>
+                            </h4>
+                            <p>
+                                <span class="lang-en">Bihar Legislative Assembly 2-day address representing Katihar District</span>
+                                <span class="lang-hi">बिहार विधानसभा में कटिहार का गौरवशाली प्रतिनिधित्व</span>
+                            </p>
                         </div>
                     </div>
 
                     <!-- Gallery Item 7 -->
-                    <div class="gallery-item lightbox-trigger" data-category="speaking leadership" data-lightbox-group="portfolio_gallery" src="images/achievements/bihar_chhatra_sansad_2025_master.webp" data-lightbox-caption="Bihar Chhatra Sansad 2025 Top Speaker Gold Medal moment">
+                    <div class="gallery-item lightbox-trigger" data-category="speaking leadership" data-lightbox-group="portfolio_gallery" src="images/achievements/bihar_chhatra_sansad_2025_master.webp" data-lightbox-caption-en="Bihar Chhatra Sansad 2025 Top Speaker Gold Medal moment" data-lightbox-caption-hi="बिहार छात्र संसद 2025 में सर्वश्रेष्ठ वक्ता स्वर्ण पदक प्राप्त करते हुए">
                         <img src="images/achievements/bihar_chhatra_sansad_2025_master.webp" alt="Bihar Chhatra Sansad 2025 top speaker award">
                         <div class="gallery-overlay">
-                            <span class="gallery-tag">Oratory Gold</span>
-                            <h4>Top Students Speaker Award</h4>
-                            <p>First rank gold medal at Bihar Chhatra Student Parliament</p>
+                            <span class="gallery-tag">
+                                <span class="lang-en">Oratory Gold</span>
+                                <span class="lang-hi">सर्वश्रेष्ठ वक्ता</span>
+                            </span>
+                            <h4>
+                                <span class="lang-en">Top Students Speaker Award</span>
+                                <span class="lang-hi">सर्वश्रेष्ठ छात्र वक्ता पुरस्कार</span>
+                            </h4>
+                            <p>
+                                <span class="lang-en">First rank gold medal at Bihar Chhatra Student Parliament</span>
+                                <span class="lang-hi">बिहार छात्र संसद में प्रथम स्थान एवं स्वर्ण पदक विजेता</span>
+                            </p>
                         </div>
                     </div>
 
                     <!-- Gallery Item 6 -->
-                    <div class="gallery-item lightbox-trigger" data-category="speaking" data-lightbox-group="portfolio_gallery" src="images/achievements/jayghosh_student_speaker_2025_master.webp" data-lightbox-caption="Jayghosh Student Speaker at Bharat Mandapam, New Delhi">
+                    <div class="gallery-item lightbox-trigger" data-category="speaking" data-lightbox-group="portfolio_gallery" src="images/achievements/jayghosh_student_speaker_2025_master.webp" data-lightbox-caption-en="Jayghosh Student Speaker at Bharat Mandapam, New Delhi" data-lightbox-caption-hi="भारत मण्डपम, नई दिल्ली में जयघोष राष्ट्रीय छात्र वक्ता के रूप में">
                         <img src="images/achievements/jayghosh_student_speaker_2025_master.webp" alt="Jayghosh Student Speaker 2025">
                         <div class="gallery-overlay">
-                            <span class="gallery-tag">Speaking</span>
-                            <h4>Jayghosh Student Speaker</h4>
-                            <p>Representing state youth voice at Bharat Mandapam, New Delhi</p>
+                            <span class="gallery-tag">
+                                <span class="lang-en">Speaking</span>
+                                <span class="lang-hi">भाषण</span>
+                            </span>
+                            <h4>
+                                <span class="lang-en">Jayghosh Student Speaker</span>
+                                <span class="lang-hi">जयघोष छात्र वक्ता</span>
+                            </h4>
+                            <p>
+                                <span class="lang-en">Representing state youth voice at Bharat Mandapam, New Delhi</span>
+                                <span class="lang-hi">भारत मण्डपम, नई दिल्ली में बिहार के युवाओं का प्रतिनिधित्व</span>
+                            </p>
                         </div>
                     </div>
 
                     <!-- Gallery Item 5 -->
-                    <div class="gallery-item lightbox-trigger" data-category="runway" data-lightbox-group="portfolio_gallery" src="images/achievements/model_of_the_year_2024_master.webp" data-lightbox-caption="Crowned Model of the Year 2024 at Delhi Runway">
+                    <div class="gallery-item lightbox-trigger" data-category="runway" data-lightbox-group="portfolio_gallery" src="images/achievements/model_of_the_year_2024_master.webp" data-lightbox-caption-en="Crowned Model of the Year 2024 at Delhi Runway" data-lightbox-caption-hi="दिल्ली में आयोजित रनवे पर 'मॉडल ऑफ द ईयर 2024' का ताज हासिल करते हुए">
                         <img src="images/achievements/model_of_the_year_2024_master.webp" alt="Model of the Year 2024 Runway">
                         <div class="gallery-overlay">
-                            <span class="gallery-tag">Runway</span>
-                            <h4>Model of the Year 2024</h4>
-                            <p>Crowned at Iconic Fashion Runway Season-06 in Delhi</p>
+                            <span class="gallery-tag">
+                                <span class="lang-en">Runway</span>
+                                <span class="lang-hi">रनवे</span>
+                            </span>
+                            <h4>
+                                <span class="lang-en">Model of the Year 2024</span>
+                                <span class="lang-hi">मॉडल ऑफ द ईयर 2024</span>
+                            </h4>
+                            <p>
+                                <span class="lang-en">Crowned at Iconic Fashion Runway Season-06 in Delhi</span>
+                                <span class="lang-hi">प्रतिष्ठित आइकॉनिक फैशन रनवे सीजन-06, दिल्ली में विजेता</span>
+                            </p>
                         </div>
                     </div>
 
                     <!-- Gallery Item 4 -->
-                    <div class="gallery-item lightbox-trigger" data-category="leadership" data-lightbox-group="portfolio_gallery" src="images/achievements/bharat_gaurav_samman_2023_master.webp" data-lightbox-caption="Bharat Gaurav Samman 2023 Honor Conferred">
+                    <div class="gallery-item lightbox-trigger" data-category="leadership" data-lightbox-group="portfolio_gallery" src="images/achievements/bharat_gaurav_samman_2023_master.webp" data-lightbox-caption-en="Bharat Gaurav Samman 2023 Honor Conferred" data-lightbox-caption-hi="राष्ट्रीय 'भारत गौरव सम्मान 2023' से विभूषित किए जाने का क्षण">
                         <img src="images/achievements/bharat_gaurav_samman_2023_master.webp" alt="Bharat Gaurav Samman 2023">
                         <div class="gallery-overlay">
-                            <span class="gallery-tag">National Honor</span>
-                            <h4>Bharat Gaurav Samman</h4>
-                            <p>Conferred for dedicated social leadership and youth service</p>
+                            <span class="gallery-tag">
+                                <span class="lang-en">National Honor</span>
+                                <span class="lang-hi">राष्ट्रीय सम्मान</span>
+                            </span>
+                            <h4>
+                                <span class="lang-en">Bharat Gaurav Samman</span>
+                                <span class="lang-hi">भारत गौरव सम्मान</span>
+                            </h4>
+                            <p>
+                                <span class="lang-en">Conferred for dedicated social leadership and youth service</span>
+                                <span class="lang-hi">अनुकरणीय सामाजिक नेतृत्व और युवा कल्याण कार्यों के लिए सम्मानित</span>
+                            </p>
                         </div>
                     </div>
 
                     <!-- Gallery Item 3 -->
-                    <div class="gallery-item lightbox-trigger" data-category="leadership" data-lightbox-group="portfolio_gallery" src="images/achievements/genius_artist_india_2023_master.webp" data-lightbox-caption="Genius Artist of India 2023 Cultural Award">
+                    <div class="gallery-item lightbox-trigger" data-category="leadership" data-lightbox-group="portfolio_gallery" src="images/achievements/genius_artist_india_2023_master.webp" data-lightbox-caption-en="Genius Artist of India 2023 Cultural Award" data-lightbox-caption-hi="जीनियस आर्टिस्ट ऑफ इंडिया 2023 सांस्कृतिक उत्कृष्टता सम्मान">
                         <img src="images/achievements/genius_artist_india_2023_master.webp" alt="Genius Artist of India 2023">
                         <div class="gallery-overlay">
-                            <span class="gallery-tag">Art & Culture</span>
-                            <h4>Genius Artist of India</h4>
-                            <p>Exceptional national distinction for community creative activism</p>
+                            <span class="gallery-tag">
+                                <span class="lang-en">Art & Culture</span>
+                                <span class="lang-hi">कला एवं संस्कृति</span>
+                            </span>
+                            <h4>
+                                <span class="lang-en">Genius Artist of India</span>
+                                <span class="lang-hi">जीनियस आर्टिस्ट ऑफ इंडिया</span>
+                            </h4>
+                            <p>
+                                <span class="lang-en">Exceptional national distinction for community creative activism</span>
+                                <span class="lang-hi">ग्रामीण विकास और रचनात्मक कला क्षेत्र में राष्ट्रीय विशिष्टता</span>
+                            </p>
                         </div>
                     </div>
 
                     <!-- Gallery Item 2 -->
-                    <div class="gallery-item lightbox-trigger" data-category="runway" data-lightbox-group="portfolio_gallery" src="images/achievements/mr_teen_india_popular_2022_master.webp" data-lightbox-caption="Mr Teen India Popular 2022 Presentation Ceremony">
+                    <div class="gallery-item lightbox-trigger" data-category="runway" data-lightbox-group="portfolio_gallery" src="images/achievements/mr_teen_india_popular_2022_master.webp" data-lightbox-caption-en="Mr Teen India Popular 2022 Presentation Ceremony" data-lightbox-caption-hi="मिस्टर टीन इंडिया पॉपुलर 2022 के मुख्य मंच पर ताजपोशी का क्षण">
                         <img src="images/achievements/mr_teen_india_popular_2022_master.webp" alt="Mr Teen India Popular 2022">
                         <div class="gallery-overlay">
-                            <span class="gallery-tag">Pageant</span>
-                            <h4>Mr Teen India Popular</h4>
-                            <p>Crowned title champion based on mass public voting support</p>
+                            <span class="gallery-tag">
+                                <span class="lang-en">Pageant</span>
+                                <span class="lang-hi">पेजेंट</span>
+                            </span>
+                            <h4>
+                                <span class="lang-en">Mr Teen India Popular</span>
+                                <span class="lang-hi">मिस्टर टीन इंडिया पॉपुलर</span>
+                            </h4>
+                            <p>
+                                <span class="lang-en">Crowned title champion based on mass public voting support</span>
+                                <span class="lang-hi">देश भर के सर्वाधिक जनमत समर्थन से बने राष्ट्रीय चैंपियन</span>
+                            </p>
                         </div>
                     </div>
 
                     <!-- Gallery Item 1 -->
-                    <div class="gallery-item lightbox-trigger" data-category="runway" data-lightbox-group="portfolio_gallery" src="images/achievements/mr_teen_india_2022_master.webp" data-lightbox-caption="Winning moment at Alee Club Mr Teen India 2022">
+                    <div class="gallery-item lightbox-trigger" data-category="runway" data-lightbox-group="portfolio_gallery" src="images/achievements/mr_teen_india_2022_master.webp" data-lightbox-caption-en="Winning moment at Alee Club Mr Teen India 2022" data-lightbox-caption-hi="एली क्लब मिस्टर टीन इंडिया 2022 का राष्ट्रीय खिताब जीतने का क्षण">
                         <img src="images/achievements/mr_teen_india_2022_master.webp" alt="Mr Teen India 2022 Winner">
                         <div class="gallery-overlay">
-                            <span class="gallery-tag">Pageant</span>
-                            <h4>Mr Teen India 2022</h4>
-                            <p>National pageant winner crowned by Bollywood actors in Delhi</p>
+                            <span class="gallery-tag">
+                                <span class="lang-en">Pageant</span>
+                                <span class="lang-hi">पेजेंट</span>
+                            </span>
+                            <h4>
+                                <span class="lang-en">Mr Teen India 2022</span>
+                                <span class="lang-hi">मिस्टर टीन इंडिया 2022</span>
+                            </h4>
+                            <p>
+                                <span class="lang-en">National pageant winner crowned by Bollywood actors in Delhi</span>
+                                <span class="lang-hi">दिल्ली में बॉलीवुड अभिनेताओं के हाथों विजेता का ताज हासिल किया</span>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -655,6 +1017,11 @@
                 <a href="https://facebook.com/gonuabhay" target="_blank" class="social-icon facebook"><i class="fa-brands fa-facebook-f"></i></a>
                 <a href="https://www.instagram.com/abhay_mahi_07" target="_blank" class="social-icon instagram"><i class="fa-brands fa-instagram"></i></a>
             </div>
+            <div class="footer-lang-switcher" style="margin-bottom: 1.5rem; display: flex; justify-content: center; align-items: center; gap: 0.8rem;">
+                <button class="footer-lang-btn active" id="footer-lang-en" onclick="setLanguage('en')" style="background: transparent; border: none; color: var(--text-muted); font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">English</button>
+                <span style="color: var(--text-muted); opacity: 0.3; font-size: 0.85rem;">•</span>
+                <button class="footer-lang-btn" id="footer-lang-hi" onclick="setLanguage('hi')" style="background: transparent; border: none; color: var(--text-muted); font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease;">हिन्दी (Hindi)</button>
+            </div>
             <p style="color: var(--text-muted); font-size: 0.8rem;">&copy; 2026 Abhay Kumar Rajak. All Rights Reserved.</p>
             <p style="margin-top: 1rem;"><a href="v1_2022/index.html" style="color: var(--accent-primary); font-size: 0.7rem; text-decoration: none; opacity: 0.5;">Archive: View 2022 Campaign Site</a></p>
         </div>
@@ -666,7 +1033,10 @@
         <div class="print-cv-page page-1">
             <div class="print-cv-header">
                 <h1>Abhay Kumar Rajak</h1>
-                <p class="print-cv-subtitle">Political Science Scholar | Chhatra Neta | Viksit Bharat Speaker | Model</p>
+                <p class="print-cv-subtitle">
+                    <span class="lang-en">Political Science Scholar | Chhatra Neta | Viksit Bharat Speaker | Model</span>
+                    <span class="lang-hi">राजनीति विज्ञान स्नातक | छात्र नेता | विकसित भारत वक्ता | मॉडल</span>
+                </p>
                 <div class="print-cv-header-details">
                     <span><i class="fa-solid fa-phone"></i> +91-6201448610</span>
                     <span><i class="fa-solid fa-envelope"></i> contact@abhaymahi.in</span>
@@ -677,118 +1047,212 @@
             <div class="print-cv-body">
                 <div class="print-cv-left">
                     <div class="print-cv-section">
-                        <h3>Personal Info</h3>
-                        <p style="font-weight: 600; color: #111; margin-bottom: 4px;">Address:</p>
-                        <p style="margin-bottom: 10px;">Patthar Tola, Kursela, Katihar, Bihar, India</p>
+                        <h3>
+                            <span class="lang-en">Personal Info</span><span class="lang-hi">व्यक्तिगत विवरण</span>
+                        </h3>
+                        <p style="font-weight: 600; color: #111; margin-bottom: 2pt;">
+                            <span class="lang-en">Address:</span><span class="lang-hi">पता:</span>
+                        </p>
+                        <p style="margin-bottom: 8pt; line-height: 1.3;">
+                            <span class="lang-en">Patthar Tola, Kursela, Katihar, Bihar, India</span>
+                            <span class="lang-hi">पत्थर टोला, कुरसेला, कटिहार, बिहार, भारत</span>
+                        </p>
                         
-                        <p style="font-weight: 600; color: #111; margin-bottom: 4px;">Languages:</p>
-                        <p style="margin-bottom: 10px;">Hindi (Fluent)<br>English (Fluent)</p>
+                        <p style="font-weight: 600; color: #111; margin-bottom: 2pt;">
+                            <span class="lang-en">Languages:</span><span class="lang-hi">भाषाएं:</span>
+                        </p>
+                        <p style="margin-bottom: 8pt; line-height: 1.3;">
+                            <span class="lang-en">Hindi (Fluent)<br>English (Fluent)</span>
+                            <span class="lang-hi">हिंदी (प्रवाहपूर्ण)<br>अंग्रेजी (प्रवाहपूर्ण)</span>
+                        </p>
                     </div>
                     <div class="print-cv-section">
-                        <h3>Core Skills</h3>
-                        <p>Leadership</p>
-                        <p>Public Speaking</p>
-                        <p>Social Awareness</p>
-                        <p>Event Organization</p>
-                        <p>Teamwork</p>
-                        <p>Problem Solving</p>
-                        <p>Time Management</p>
+                        <h3>
+                            <span class="lang-en">Core Skills</span><span class="lang-hi">मुख्य कौशल</span>
+                        </h3>
+                        <p><span class="lang-en">Leadership</span><span class="lang-hi">नेतृत्व क्षमता</span></p>
+                        <p><span class="lang-en">Public Speaking</span><span class="lang-hi">जनभाषण कला</span></p>
+                        <p><span class="lang-en">Social Awareness</span><span class="lang-hi">सामाजिक जागरूकता</span></p>
+                        <p><span class="lang-en">Event Organization</span><span class="lang-hi">कार्यक्रम आयोजन</span></p>
+                        <p><span class="lang-en">Teamwork</span><span class="lang-hi">टीमवर्क व समन्वय</span></p>
+                        <p><span class="lang-en">Problem Solving</span><span class="lang-hi">समस्या निवारण</span></p>
+                        <p><span class="lang-en">Time Management</span><span class="lang-hi">समय प्रबंधन</span></p>
                     </div>
                     <div class="print-cv-section">
-                        <h3>Hobbies</h3>
-                        <p>Reading & Literature</p>
-                        <p>Photography</p>
-                        <p>Traveling & Exploration</p>
-                        <p>Fitness & Athletic Work</p>
-                        <p>Playing Cricket</p>
+                        <h3>
+                            <span class="lang-en">Hobbies</span><span class="lang-hi">अभिरुचि (शौक)</span>
+                        </h3>
+                        <p><span class="lang-en">Reading & Literature</span><span class="lang-hi">पठन एवं साहित्य</span></p>
+                        <p><span class="lang-en">Photography</span><span class="lang-hi">फोटोग्राफी</span></p>
+                        <p><span class="lang-en">Traveling & Exploration</span><span class="lang-hi">यात्रा एवं भ्रमण</span></p>
+                        <p><span class="lang-en">Fitness & Athletic Work</span><span class="lang-hi">फिटनेस एवं फिटनेस वर्कआउट</span></p>
+                        <p><span class="lang-en">Playing Cricket</span><span class="lang-hi">क्रिकेट खेलना</span></p>
                     </div>
                 </div>
                 
                 <div class="print-cv-right">
                     <div class="print-cv-section" style="margin-bottom: 12pt !important;">
-                        <p style="margin-bottom: 0; font-size: 9.5pt !important; line-height: 1.45 !important; color: #333333 !important; text-align: justify;">A B.A. Political Science Honors graduate, active youth leader, and student union representative with a strong foundation in governance and international relations. Combines a proven record of youth advocacy—representing Katihar inside the Bihar Legislative Assembly—with national cultural breakthroughs as Mr. Teen India Popular and Model of the Year. Dedicated to bridging civic leadership, grassroots social work, and creative expression to champion youth welfare and community development.</p>
+                        <p style="margin-bottom: 0; font-size: 9.5pt !important; line-height: 1.45 !important; color: #333333 !important; text-align: justify;">
+                            <span class="lang-en">A B.A. Political Science Honors graduate, active youth leader, and student union representative with a strong foundation in governance and international relations. Combines a proven record of youth advocacy—representing Katihar inside the Bihar Legislative Assembly—with national cultural breakthroughs as Mr. Teen India Popular and Model of the Year. Dedicated to bridging civic leadership, grassroots social work, and creative expression to champion youth welfare and community development.</span>
+                            <span class="lang-hi">राजनीति विज्ञान (प्रतिष्ठा) स्नातक, सक्रिय युवा नेता और छात्र संघ प्रतिनिधि। कटिहार का बिहार विधानसभा में प्रतिनिधित्व करने के साथ ही राष्ट्रीय स्तर पर 'मिस्टर टीन इंडिया पॉपुलर' और 'मॉडल ऑफ द ईयर' के रूप में राष्ट्रीय गौरव अर्जित किया। छात्र हितों, सामाजिक कल्याण और रचनात्मक अभिव्यक्ति के माध्यम से समाज में सकारात्मक बदलाव लाने के लिए प्रतिबद्ध हैं।</span>
+                        </p>
                     </div>
                     
                     <div class="print-cv-section">
-                        <h3>Milestones & Achievements</h3>
+                        <h3>
+                            <span class="lang-en">Milestones & Achievements</span><span class="lang-hi">उपलब्धियां और मील के पत्थर</span>
+                        </h3>
                         <table style="width: 100%; border-collapse: collapse; margin-top: 5px;">
                             <tr style="vertical-align: top;">
                                 <td style="width: 35pt; font-size: 8.5pt; font-weight: 700; color: #d4af37; padding: 3pt 0;">2026</td>
                                 <td style="padding: 3pt 0;">
-                                    <strong style="font-size: 9pt; color: #111;">Viksit Bharat Youth Assembly Speaker</strong><br>
-                                    <span style="font-size: 8pt; color: #555;">Bihar Legislative Assembly, Patna — Addressed the house representing progressive Katihar youth and local reforms.</span>
+                                    <strong style="font-size: 9pt; color: #111;">
+                                        <span class="lang-en">Viksit Bharat Youth Assembly Speaker</span>
+                                        <span class="lang-hi">विकसित भारत युवा सभा वक्ता</span>
+                                    </strong><br>
+                                    <span style="font-size: 8pt; color: #555;">
+                                        <span class="lang-en">Bihar Legislative Assembly, Patna — Addressed the house representing progressive Katihar youth and local reforms.</span>
+                                        <span class="lang-hi">बिहार विधानसभा, पटना — कटिहार के जागरूक युवाओं और क्षेत्रीय सुधारों का प्रतिनिधित्व करते हुए विशेष वक्तव्य दिया।</span>
+                                    </span>
                                 </td>
                             </tr>
                             <tr style="vertical-align: top;">
                                 <td style="width: 35pt; font-size: 8.5pt; font-weight: 700; color: #d4af37; padding: 3pt 0;">2025</td>
                                 <td style="padding: 3pt 0;">
-                                    <strong style="font-size: 9pt; color: #111;">Top Student Speaker & Gold Medalist</strong><br>
-                                    <span style="font-size: 8pt; color: #555;">Bihar Chhatra Sansad — Conferred first rank gold medal by MLA Anand Mishra and MP Shambhavi Choudhary.</span>
+                                    <strong style="font-size: 9pt; color: #111;">
+                                        <span class="lang-en">Top Student Speaker & Gold Medalist</span>
+                                        <span class="lang-hi">सर्वश्रेष्ठ छात्र वक्ता एवं स्वर्ण पदक विजेता</span>
+                                    </strong><br>
+                                    <span style="font-size: 8pt; color: #555;">
+                                        <span class="lang-en">Bihar Chhatra Sansad — Conferred first rank gold medal by MLA Anand Mishra and MP Shambhavi Choudhary.</span>
+                                        <span class="lang-hi">बिहार छात्र संसद — विधायक आनंद मिश्रा और सांसद शाम्भवी चौधरी द्वारा प्रथम स्थान स्वर्ण पदक से सम्मानित किया गया।</span>
+                                    </span>
                                 </td>
                             </tr>
                             <tr style="vertical-align: top;">
                                 <td style="width: 35pt; font-size: 8.5pt; font-weight: 700; color: #d4af37; padding: 3pt 0;">2025</td>
                                 <td style="padding: 3pt 0;">
-                                    <strong style="font-size: 9pt; color: #111;">Jayghosh Student Speaker</strong><br>
-                                    <span style="font-size: 8pt; color: #555;">Bharat Mandapam, New Delhi — Selected to address the national youth leadership convention.</span>
+                                    <strong style="font-size: 9pt; color: #111;">
+                                        <span class="lang-en">Jayghosh Student Speaker</span>
+                                        <span class="lang-hi">जयघोष छात्र वक्ता</span>
+                                    </strong><br>
+                                    <span style="font-size: 8pt; color: #555;">
+                                        <span class="lang-en">Bharat Mandapam, New Delhi — Selected to address the national youth leadership convention.</span>
+                                        <span class="lang-hi">भारत मंडपम, नई दिल्ली — राष्ट्रीय युवा नेतृत्व सम्मेलन में बिहार के युवाओं का प्रतिनिधित्व करने हेतु चयनित।</span>
+                                    </span>
                                 </td>
                             </tr>
                             <tr style="vertical-align: top;">
                                 <td style="width: 35pt; font-size: 8.5pt; font-weight: 700; color: #d4af37; padding: 3pt 0;">2024</td>
                                 <td style="padding: 3pt 0;">
-                                    <strong style="font-size: 9pt; color: #111;">Model of the Year Winner</strong><br>
-                                    <span style="font-size: 8pt; color: #555;">Delhi Iconic Runway Season 06 — Conferred major national runway crown by actress Archana Gautam.</span>
+                                    <strong style="font-size: 9pt; color: #111;">
+                                        <span class="lang-en">Model of the Year Winner</span>
+                                        <span class="lang-hi">मॉडल ऑफ द ईयर विजेता</span>
+                                    </strong><br>
+                                    <span style="font-size: 8pt; color: #555;">
+                                        <span class="lang-en">Delhi Iconic Runway Season 06 — Conferred major national runway crown by actress Archana Gautam.</span>
+                                        <span class="lang-hi">दिल्ली आइकॉनिक रनवे सीजन 06 — अभिनेत्री अर्चना गौतम द्वारा मुख्य राष्ट्रीय रनवे खिताब से ताजपोशी।</span>
+                                    </span>
                                 </td>
                             </tr>
                             <tr style="vertical-align: top;">
                                 <td style="width: 35pt; font-size: 8.5pt; font-weight: 700; color: #d4af37; padding: 3pt 0;">2023</td>
                                 <td style="padding: 3pt 0;">
-                                    <strong style="font-size: 9pt; color: #111;">Bharat Gaurav Samman</strong><br>
-                                    <span style="font-size: 8pt; color: #555;">National Social Leadership Award — Conferred recognition for village literacy campaigns and welfare drives.</span>
+                                    <strong style="font-size: 9pt; color: #111;">
+                                        <span class="lang-en">Bharat Gaurav Samman</span>
+                                        <span class="lang-hi">भारत गौरव सम्मान</span>
+                                    </strong><br>
+                                    <span style="font-size: 8pt; color: #555;">
+                                        <span class="lang-en">National Social Leadership Award — Conferred recognition for village literacy campaigns and welfare drives.</span>
+                                        <span class="lang-hi">राष्ट्रीय सामाजिक नेतृत्व पुरस्कार — ग्रामीण साक्षरता अभियानों और कल्याणकारी कार्यों में उत्कृष्ट सेवा के लिए सम्मानित।</span>
+                                    </span>
                                 </td>
                             </tr>
                             <tr style="vertical-align: top;">
                                 <td style="width: 35pt; font-size: 8.5pt; font-weight: 700; color: #d4af37; padding: 3pt 0;">2023</td>
                                 <td style="padding: 3pt 0;">
-                                    <strong style="font-size: 9pt; color: #111;">Genius Artist of India</strong><br>
-                                    <span style="font-size: 8pt; color: #555;">National Cultural Distinction — Awarded for blending public speaking and creative fine arts for awareness.</span>
+                                    <strong style="font-size: 9pt; color: #111;">
+                                        <span class="lang-en">Genius Artist of India</span>
+                                        <span class="lang-hi">जीनियस आर्टिस्ट ऑफ इंडिया</span>
+                                    </strong><br>
+                                    <span style="font-size: 8pt; color: #555;">
+                                        <span class="lang-en">National Cultural Distinction — Awarded for blending public speaking and creative fine arts for awareness.</span>
+                                        <span class="lang-hi">राष्ट्रीय सांस्कृतिक विशिष्टता सम्मान — जन जागरूकता के लिए लोक कला, फोटोग्राफी और वक्तृत्व कला के बेहतरीन समन्वय हेतु।</span>
+                                    </span>
                                 </td>
                             </tr>
                             <tr style="vertical-align: top;">
                                 <td style="width: 35pt; font-size: 8.5pt; font-weight: 700; color: #d4af37; padding: 3pt 0;">2022</td>
                                 <td style="padding: 3pt 0;">
-                                    <strong style="font-size: 9pt; color: #111;">Mr. Teen India Popular Champion</strong><br>
-                                    <span style="font-size: 8pt; color: #555;">National Pageant Champion — Crowned in Delhi in the presence of Bollywood celebrity Tushar Kapoor.</span>
+                                    <strong style="font-size: 9pt; color: #111;">
+                                        <span class="lang-en">Mr. Teen India Popular Champion</span>
+                                        <span class="lang-hi">मिस्टर टीन इंडिया पॉपुलर चैंपियन</span>
+                                    </strong><br>
+                                    <span style="font-size: 8pt; color: #555;">
+                                        <span class="lang-en">National Pageant Champion — Crowned in Delhi in the presence of Bollywood celebrity Tushar Kapoor.</span>
+                                        <span class="lang-hi">राष्ट्रीय पेजेंट चैंपियन — बॉलीवुड अभिनेता तुषार कपूर की उपस्थिति में दिल्ली में खिताब से नवाजा गया।</span>
+                                    </span>
                                 </td>
                             </tr>
                             <tr style="vertical-align: top;">
                                 <td style="width: 35pt; font-size: 8.5pt; font-weight: 700; color: #d4af37; padding: 3pt 0;">2022</td>
                                 <td style="padding: 3pt 0;">
-                                    <strong style="font-size: 9pt; color: #111;">Mr. Teen India Pageant Finalist</strong><br>
-                                    <span style="font-size: 8pt; color: #555;">Alee Club Runway Finals, Delhi — Crowned as runner-up and national finalist at the premium teen pageant showcase.</span>
+                                    <strong style="font-size: 9pt; color: #111;">
+                                        <span class="lang-en">Mr. Teen India Pageant Finalist</span>
+                                        <span class="lang-hi">मिस्टर टीन इंडिया पेजेंट फाइनलिस्ट</span>
+                                    </strong><br>
+                                    <span style="font-size: 8pt; color: #555;">
+                                        <span class="lang-en">Alee Club Runway Finals, Delhi — Crowned as runner-up and national finalist at the premium teen pageant showcase.</span>
+                                        <span class="lang-hi">एली क्लब रनवे फाइनल, दिल्ली — देश के प्रतिष्ठित टीन पेजेंट शो में राष्ट्रीय उपविजेता और फाइनलिस्ट।</span>
+                                    </span>
                                 </td>
                             </tr>
                         </table>
                     </div>
                     
                     <div class="print-cv-section">
-                        <h3>Education</h3>
+                        <h3>
+                            <span class="lang-en">Education</span><span class="lang-hi">शिक्षा</span>
+                        </h3>
                         <div class="print-cv-item">
-                            <h4>B.A. in Political Science (Honors)</h4>
-                            <p class="print-cv-item-meta">B.N. College, Bhagalpur | 2023 - 2026</p>
-                            <p>Specialized study in governance, international relations, political theories, and constitutional history. Graduated with Honors in March 2026.</p>
+                            <h4>
+                                <span class="lang-en">B.A. in Political Science (Honors)</span>
+                                <span class="lang-hi">बी.ए. राजनीति विज्ञान (प्रतिष्ठा)</span>
+                            </h4>
+                            <p class="print-cv-item-meta">
+                                <span class="lang-en">B.N. College, Bhagalpur | 2023 - 2026</span>
+                                <span class="lang-hi">बी.एन. कॉलेज, भागलपुर | 2023 - 2026</span>
+                            </p>
+                            <p>
+                                <span class="lang-en">Specialized study in governance, international relations, political theories, and constitutional history. Graduated with Honors in March 2026.</span>
+                                <span class="lang-hi">शासन व्यवस्था, अंतर्राष्ट्रीय संबंध, राजनीतिक सिद्धांतों और संवैधानिक इतिहास का गहन अध्ययन। मार्च 2026 में प्रतिष्ठा (Honors) के साथ डिग्री पूर्ण।</span>
+                            </p>
                         </div>
                     </div>
                     
                     <div class="print-cv-section" style="margin-bottom: 0 !important;">
-                        <h3>Social Leadership</h3>
+                        <h3>
+                            <span class="lang-en">Social Leadership</span><span class="lang-hi">सामाजिक एवं युवा नेतृत्व</span>
+                        </h3>
                         <div class="print-cv-item" style="margin-bottom: 6pt !important;">
-                            <h4>Regional Student Union Leader</h4>
-                            <p>Leading student welfare, mediating grievances, and coordinating youth academic conferences.</p>
+                            <h4>
+                                <span class="lang-en">Regional Student Union Leader</span>
+                                <span class="lang-hi">क्षेत्रीय छात्र संघ नेता</span>
+                            </h4>
+                            <p>
+                                <span class="lang-en">Leading student welfare, mediating grievances, and coordinating youth academic conferences.</span>
+                                <span class="lang-hi">छात्र कल्याण का नेतृत्व, शैक्षणिक समस्याओं का समाधान और युवा परिषदों का सफल समन्वय।</span>
+                            </p>
                         </div>
                         <div class="print-cv-item" style="margin-bottom: 0 !important;">
-                            <h4>Community Social Worker</h4>
-                            <p>Directing block drives for basic literacy, health access, and social awareness across Bihar villages.</p>
+                            <h4>
+                                <span class="lang-en">Community Social Worker</span>
+                                <span class="lang-hi">सामुदायिक सामाजिक कार्यकर्ता</span>
+                            </h4>
+                            <p>
+                                <span class="lang-en">Directing block drives for basic literacy, health access, and social awareness across Bihar villages.</span>
+                                <span class="lang-hi">कटिहार के ग्रामीण ब्लॉकों में बुनियादी साक्षरता, स्वास्थ्य पहुँच और सामाजिक चेतना अभियान का संचालन।</span>
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -797,15 +1261,27 @@
 
         <!-- PAGE 2: Visual Portfolio Dossier - Viksit Bharat & Chhatra Sansad -->
         <div class="print-cv-page page-2">
-            <h3 class="print-visual-title">Milestones Portfolio: Legislative Address & Student Parliament</h3>
+            <h3 class="print-visual-title">
+                <span class="lang-en">Milestones Portfolio: Legislative Address & Student Parliament</span>
+                <span class="lang-hi">उपलब्धियां पोर्टफोलियो: विधानसभा संबोधन एवं छात्र संसद</span>
+            </h3>
             
             <!-- Row 1 -->
             <div class="print-visual-row">
                 <img src="images/achievements/viksit_bharat_youth_parliament_2026_master.webp" alt="Viksit Bharat Speaker">
                 <div class="print-visual-content">
-                    <h4>Viksit Bharat Assembly Speaker</h4>
-                    <p class="print-visual-meta">2026 • Bihar Legislative Assembly, Patna</p>
-                    <p>Addressed the Legislative Assembly chamber representing the progressive youth voices of Katihar district, advocating for governance reforms and rural youth empowerment campaigns.</p>
+                    <h4>
+                        <span class="lang-en">Viksit Bharat Assembly Speaker</span>
+                        <span class="lang-hi">विकसित भारत विधानसभा वक्ता</span>
+                    </h4>
+                    <p class="print-visual-meta">
+                        <span class="lang-en">2026 • Bihar Legislative Assembly, Patna</span>
+                        <span class="lang-hi">2026 • बिहार विधानसभा, पटना</span>
+                    </p>
+                    <p>
+                        <span class="lang-en">Addressed the Legislative Assembly chamber representing the progressive youth voices of Katihar district, advocating for governance reforms and rural youth empowerment campaigns.</span>
+                        <span class="lang-hi">बिहार विधानसभा भवन में कटिहार जिले के प्रगतिशील युवाओं का प्रतिनिधित्व करते हुए भाषण दिया, जहाँ सुशासन सुधारों और ग्रामीण युवा सशक्तिकरण अभियानों की जोरदार वकालत की।</span>
+                    </p>
                 </div>
             </div>
             
@@ -813,24 +1289,45 @@
             <div class="print-visual-row">
                 <img src="images/achievements/bihar_chhatra_sansad_2025_master.webp" alt="Bihar Chhatra Sansad">
                 <div class="print-visual-content">
-                    <h4>Bihar Chhatra Sansad Gold Medalist</h4>
-                    <p class="print-visual-meta">2025 • Student Parliament Champion</p>
-                    <p>Secured the top student speaker honors and first rank gold medal. Conferred in Patna by MLA Anand Mishra and Member of Parliament Shambhavi Choudhary.</p>
+                    <h4>
+                        <span class="lang-en">Bihar Chhatra Sansad Gold Medalist</span>
+                        <span class="lang-hi">बिहार छात्र संसद स्वर्ण पदक विजेता</span>
+                    </h4>
+                    <p class="print-visual-meta">
+                        <span class="lang-en">2025 • Student Parliament Champion</span>
+                        <span class="lang-hi">2025 • छात्र संसद चैंपियन</span>
+                    </p>
+                    <p>
+                        <span class="lang-en">Secured the top student speaker honors and first rank gold medal. Conferred in Patna by MLA Anand Mishra and Member of Parliament Shambhavi Choudhary.</span>
+                        <span class="lang-hi">सर्वश्रेष्ठ छात्र वक्ता का सम्मान और प्रथम स्थान स्वर्ण पदक प्राप्त किया। पटना में आयोजित समारोह में विधायक आनंद मिश्रा और सांसद शाम्भवी चौधरी द्वारा पदक प्रदान किया गया।</span>
+                    </p>
                 </div>
             </div>
         </div>
 
         <!-- PAGE 3: Visual Portfolio Dossier - National Conventions & Runway Crowns -->
         <div class="print-cv-page page-3">
-            <h3 class="print-visual-title">Milestones Portfolio: National Conventions & High Fashion Runway</h3>
+            <h3 class="print-visual-title">
+                <span class="lang-en">Milestones Portfolio: National Conventions & High Fashion Runway</span>
+                <span class="lang-hi">उपलब्धियां पोर्टफोलियो: राष्ट्रीय सम्मेलन एवं उच्च फैशन रनवे</span>
+            </h3>
             
             <!-- Row 3 -->
             <div class="print-visual-row">
                 <img src="images/achievements/jayghosh_student_speaker_2025_master.webp" alt="Jayghosh Speaker">
                 <div class="print-visual-content">
-                    <h4>Jayghosh Student Representative</h4>
-                    <p class="print-visual-meta">2025 • Bharat Mandapam, New Delhi</p>
-                    <p>Selected to represent regional student voices at the prestigious national youth leadership convention inside Bharat Mandapam, presenting views on state governance.</p>
+                    <h4>
+                        <span class="lang-en">Jayghosh Student Representative</span>
+                        <span class="lang-hi">जयघोष छात्र प्रतिनिधि</span>
+                    </h4>
+                    <p class="print-visual-meta">
+                        <span class="lang-en">2025 • Bharat Mandapam, New Delhi</span>
+                        <span class="lang-hi">2025 • भारत मंडपम, नई दिल्ली</span>
+                    </p>
+                    <p>
+                        <span class="lang-en">Selected to represent regional student voices at the prestigious national youth leadership convention inside Bharat Mandapam, presenting views on state governance.</span>
+                        <span class="lang-hi">भारत मंडपम में आयोजित प्रतिष्ठित राष्ट्रीय युवा नेतृत्व सम्मेलन में बिहार के छात्र हितों का प्रतिनिधित्व करने हेतु चयनित, जहाँ राज्य शासन प्रणाली पर अपने विचार साझा किए।</span>
+                    </p>
                 </div>
             </div>
             
@@ -838,24 +1335,45 @@
             <div class="print-visual-row">
                 <img src="images/achievements/model_of_the_year_2024_master.webp" alt="Model of the Year">
                 <div class="print-visual-content">
-                    <h4>National Model of the Year</h4>
-                    <p class="print-visual-meta">2024 • Delhi Iconic Runway Winner</p>
-                    <p>Walked the premium national high-fashion runway, crowned Model of the Year Season-06. Conferred on stage by Bollywood actress Archana Gautam.</p>
+                    <h4>
+                        <span class="lang-en">National Model of the Year</span>
+                        <span class="lang-hi">राष्ट्रीय मॉडल ऑफ द ईयर</span>
+                    </h4>
+                    <p class="print-visual-meta">
+                        <span class="lang-en">2024 • Delhi Iconic Runway Winner</span>
+                        <span class="lang-hi">2024 • दिल्ली आइकॉनिक रनवे विजेता</span>
+                    </p>
+                    <p>
+                        <span class="lang-en">Walked the premium national high-fashion runway, crowned Model of the Year Season-06. Conferred on stage by Bollywood actress Archana Gautam.</span>
+                        <span class="lang-hi">देश के प्रतिष्ठित राष्ट्रीय फैशन रनवे पर वॉक किया और आइकॉनिक फैशन रनवे शो सीजन-06 में 'मॉडल ऑफ द ईयर' के खिताब से नवाजे गए। बॉलीवुड अभिनेत्री अर्चना गौतम द्वारा ताज पहनाया गया।</span>
+                    </p>
                 </div>
             </div>
         </div>
 
         <!-- PAGE 4: Visual Portfolio Dossier - Social Leadership & Cultural Awards -->
         <div class="print-cv-page page-4">
-            <h3 class="print-visual-title">Milestones Portfolio: Social Leadership & Cultural Honors</h3>
+            <h3 class="print-visual-title">
+                <span class="lang-en">Milestones Portfolio: Social Leadership & Cultural Honors</span>
+                <span class="lang-hi">उपलब्धियां पोर्टफोलियो: सामाजिक नेतृत्व एवं सांस्कृतिक सम्मान</span>
+            </h3>
             
             <!-- Row 5 -->
             <div class="print-visual-row">
                 <img src="images/achievements/bharat_gaurav_samman_2023_master.webp" alt="Bharat Gaurav Samman">
                 <div class="print-visual-content">
-                    <h4>Bharat Gaurav Samman Awardee</h4>
-                    <p class="print-visual-meta">2023 • National Leadership Recognition</p>
-                    <p>Conferred with the prestigious national honor for outstanding dedication to student welfare, organizing blocks, and running community rural education drives.</p>
+                    <h4>
+                        <span class="lang-en">Bharat Gaurav Samman Awardee</span>
+                        <span class="lang-hi">भारत गौरव सम्मान प्राप्तकर्ता</span>
+                    </h4>
+                    <p class="print-visual-meta">
+                        <span class="lang-en">2023 • National Leadership Recognition</span>
+                        <span class="lang-hi">2023 • राष्ट्रीय नेतृत्व सम्मान</span>
+                    </p>
+                    <p>
+                        <span class="lang-en">Conferred with the prestigious national honor for outstanding dedication to student welfare, organizing blocks, and running community rural education drives.</span>
+                        <span class="lang-hi">छात्र कल्याण, ग्रामीण शिक्षा अभियानों के संचालन और कटिहार जिले में उत्कृष्ट सामाजिक सेवा के लिए देश के प्रतिष्ठित 'भारत गौरव सम्मान' से विभूषित किया गया।</span>
+                    </p>
                 </div>
             </div>
             
@@ -863,24 +1381,45 @@
             <div class="print-visual-row">
                 <img src="images/achievements/genius_artist_india_2023_master.webp" alt="Genius Artist of India">
                 <div class="print-visual-content">
-                    <h4>Genius Artist of India Award</h4>
-                    <p class="print-visual-meta">2023 • Cultural Distinction Honor</p>
-                    <p>Conferred cultural award for integrating fine arts, photography, and speaking to drive community welfare programs across rural blocks of Katihar district.</p>
+                    <h4>
+                        <span class="lang-en">Genius Artist of India Award</span>
+                        <span class="lang-hi">जीनियस आर्टिस्ट ऑफ इंडिया पुरस्कार</span>
+                    </h4>
+                    <p class="print-visual-meta">
+                        <span class="lang-en">2023 • Cultural Distinction Honor</span>
+                        <span class="lang-hi">2023 • सांस्कृतिक विशिष्टता सम्मान</span>
+                    </p>
+                    <p>
+                        <span class="lang-en">Conferred cultural award for integrating fine arts, photography, and speaking to drive community welfare programs across rural blocks of Katihar district.</span>
+                        <span class="lang-hi">जन जागरूकता अभियानों के लिए लोक कला, फोटोग्राफी और वक्तृत्व कला के रचनात्मक एकीकरण हेतु राष्ट्रीय विशिष्टता सम्मान प्रदान किया गया।</span>
+                    </p>
                 </div>
             </div>
         </div>
 
         <!-- PAGE 5: Visual Portfolio Dossier - Pageantry & National Championships -->
         <div class="print-cv-page page-5">
-            <h3 class="print-visual-title">Milestones Portfolio: Teen India Pageantry & Runway Campaigns</h3>
+            <h3 class="print-visual-title">
+                <span class="lang-en">Milestones Portfolio: Teen India Pageantry & Runway Campaigns</span>
+                <span class="lang-hi">उपलब्धियां पोर्टफोलियो: टीन इंडिया पेजेंट एवं रनवे अभियान</span>
+            </h3>
             
             <!-- Row 7 -->
             <div class="print-visual-row">
                 <img src="images/achievements/mr_teen_india_popular_2022_master.webp" alt="Mr Teen India Popular">
                 <div class="print-visual-content">
-                    <h4>Mr. Teen India Popular Champion</h4>
-                    <p class="print-visual-meta">2022 • National Pageant Winner</p>
-                    <p>Crowned Mr. Teen India Popular in New Delhi after receiving the highest nationwide public votes, presenting pageantry in front of actor Tushar Kapoor.</p>
+                    <h4>
+                        <span class="lang-en">Mr. Teen India Popular Champion</span>
+                        <span class="lang-hi">मिस्टर टीन इंडिया पॉपुलर चैंपियन</span>
+                    </h4>
+                    <p class="print-visual-meta">
+                        <span class="lang-en">2022 • National Pageant Winner</span>
+                        <span class="lang-hi">2022 • राष्ट्रीय पेजेंट विजेता</span>
+                    </p>
+                    <p>
+                        <span class="lang-en">Crowned Mr. Teen India Popular in New Delhi after receiving the highest nationwide public votes, presenting pageantry in front of actor Tushar Kapoor.</span>
+                        <span class="lang-hi">देश भर से रिकॉर्ड तोड़ जनमत प्राप्त करने के बाद नई दिल्ली में 'मिस्टर टीन इंडिया पॉपुलर' का ताज जीता। बॉलीवुड अभिनेता तुषार कपूर के समक्ष बेहतरीन प्रदर्शन किया।</span>
+                    </p>
                 </div>
             </div>
             
@@ -888,9 +1427,18 @@
             <div class="print-visual-row">
                 <img src="images/achievements/mr_teen_india_2022_master.webp" alt="Mr Teen India Pageant">
                 <div class="print-visual-content">
-                    <h4>National Teen Pageant Finalist</h4>
-                    <p class="print-visual-meta">2022 • Alee Club Runway Finals, Delhi</p>
-                    <p>Crowned as runner-up and national finalist at the premium Alee Club Mr Teen India pageant runway showcase, launched in Delhi in front of actor Ayub Khan.</p>
+                    <h4>
+                        <span class="lang-en">National Teen Pageant Finalist</span>
+                        <span class="lang-hi">राष्ट्रीय टीन पेजेंट फाइनलिस्ट</span>
+                    </h4>
+                    <p class="print-visual-meta">
+                        <span class="lang-en">2022 • Alee Club Runway Finals, Delhi</span>
+                        <span class="lang-hi">2022 • एली क्लब रनवे फाइनल, दिल्ली</span>
+                    </p>
+                    <p>
+                        <span class="lang-en">Crowned as runner-up and national finalist at the premium Alee Club Mr Teen India pageant runway showcase, launched in Delhi in front of actor Ayub Khan.</span>
+                        <span class="lang-hi">देश के प्रीमियम टीन पेजेंट 'एली क्लब मिस्टर टीन इंडिया' रनवे शोकेस में राष्ट्रीय उपविजेता और मुख्य रनवे फाइनलिस्ट। अभिनेता अय्यूब खान की उपस्थिति में सम्मानित किया गया।</span>
+                    </p>
                 </div>
             </div>
         </div>

@@ -175,7 +175,10 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!currentGroup.length) return;
         const item = currentGroup[currentIndex];
         lightboxImg.src = item.src;
-        lightboxCaption.textContent = item.caption || '';
+        
+        // Bilingual light-box captions rendering dynamically based on current language
+        const isHi = document.body.classList.contains('lang-hi-active');
+        lightboxCaption.textContent = (isHi ? item.captionHi : item.captionEn) || '';
         
         // Hide prev/next buttons if only 1 image in group
         if (currentGroup.length <= 1) {
@@ -217,7 +220,8 @@ document.addEventListener("DOMContentLoaded", () => {
         
         const groupItems = allTriggers.map(el => ({
             src: el.getAttribute('href') || el.getAttribute('src'),
-            caption: el.getAttribute('data-lightbox-caption') || el.getAttribute('alt') || ''
+            captionEn: el.getAttribute('data-lightbox-caption-en') || el.getAttribute('data-lightbox-caption') || el.getAttribute('alt') || '',
+            captionHi: el.getAttribute('data-lightbox-caption-hi') || el.getAttribute('data-lightbox-caption') || el.getAttribute('alt') || ''
         }));
 
         const activeIndex = allTriggers.indexOf(trigger);
@@ -279,5 +283,73 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
             });
         });
+    }
+});
+
+// Bilingual Language Switcher Logic
+window.setLanguage = function(lang) {
+    if (lang === 'hi') {
+        document.body.classList.add('lang-hi-active');
+        
+        // Active status synchronization across all 3 controls
+        document.getElementById('btn-lang-hi')?.classList.add('active');
+        document.getElementById('btn-lang-en')?.classList.remove('active');
+        
+        document.getElementById('float-lang-hi')?.classList.add('active');
+        document.getElementById('float-lang-en')?.classList.remove('active');
+        
+        document.getElementById('footer-lang-hi')?.classList.add('active');
+        document.getElementById('footer-lang-en')?.classList.remove('active');
+        
+        localStorage.setItem('preferred-language-v2', 'hi');
+    } else {
+        document.body.classList.remove('lang-hi-active');
+        
+        // Active status synchronization across all 3 controls
+        document.getElementById('btn-lang-en')?.classList.add('active');
+        document.getElementById('btn-lang-hi')?.classList.remove('active');
+        
+        document.getElementById('float-lang-en')?.classList.add('active');
+        document.getElementById('float-lang-hi')?.classList.remove('active');
+        
+        document.getElementById('footer-lang-en')?.classList.add('active');
+        document.getElementById('footer-lang-hi')?.classList.remove('active');
+        
+        localStorage.setItem('preferred-language-v2', 'en');
+    }
+};
+
+window.selectInitialLanguage = function(lang) {
+    setLanguage(lang);
+    const modal = document.getElementById('lang-pref-modal');
+    if (modal) {
+        modal.classList.remove('active');
+        setTimeout(() => {
+            modal.style.display = 'none';
+        }, 600); // matches CSS overlay transition duration
+    }
+};
+
+// Check language preference and initialize
+document.addEventListener('DOMContentLoaded', () => {
+    const savedLang = localStorage.getItem('preferred-language-v2');
+    if (!savedLang) {
+        // First-time visitor: Show the modal overlay!
+        const modal = document.getElementById('lang-pref-modal');
+        if (modal) {
+            modal.style.display = 'flex';
+            // Force redraw/reflow for smooth opacity transition
+            modal.offsetHeight;
+            modal.classList.add('active');
+        }
+        // Initialize English temporarily visually
+        setLanguage('en');
+    } else {
+        // Returning visitor: apply saved preference
+        setLanguage(savedLang);
+        const modal = document.getElementById('lang-pref-modal');
+        if (modal) {
+            modal.style.display = 'none';
+        }
     }
 });
