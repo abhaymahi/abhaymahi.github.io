@@ -129,8 +129,10 @@ nav {
     transition: var(--transition-smooth);
 }
 
-.nav-links a:hover {
+.nav-links a:hover,
+.nav-links a.active {
     color: var(--accent-primary);
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
 }
 
 /* --- Mobile Menu Toggle --- */

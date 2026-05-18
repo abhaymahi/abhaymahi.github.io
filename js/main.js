@@ -8,6 +8,46 @@ window.addEventListener('scroll', () => {
     }
 });
 
+// Active Menu Scroll Spy
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+
+function scrollSpy() {
+    const scrollY = window.pageYOffset;
+    const headerHeight = header.offsetHeight;
+    
+    // Default to highlighting home at the top of page
+    if (scrollY <= 50) {
+        navLinks.forEach(a => {
+            if (a.getAttribute('href') === '#home') {
+                a.classList.add('active');
+            } else {
+                a.classList.remove('active');
+            }
+        });
+        return;
+    }
+    
+    sections.forEach(current => {
+        const sectionHeight = current.offsetHeight;
+        const sectionTop = current.offsetTop - headerHeight - 120; // 120px threshold for early activation
+        const sectionId = current.getAttribute('id');
+        
+        if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            navLinks.forEach(a => {
+                if (a.getAttribute('href') === `#${sectionId}`) {
+                    a.classList.add('active');
+                } else {
+                    a.classList.remove('active');
+                }
+            });
+        }
+    });
+}
+
+window.addEventListener('scroll', scrollSpy);
+document.addEventListener('DOMContentLoaded', scrollSpy);
+
 // Mobile Menu Toggle
 const menuToggle = document.getElementById('mobile-menu-btn');
 const navLinksContainer = document.querySelector('.nav-links');
