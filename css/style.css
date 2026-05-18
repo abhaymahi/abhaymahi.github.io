@@ -1464,20 +1464,20 @@ footer {
     .print-visual-row {
         display: grid !important;
         grid-template-columns: 2.2fr 3fr !important;
-        gap: 20pt !important;
-        margin-bottom: 25pt !important;
+        gap: 25pt !important;
+        margin-bottom: 40pt !important;
         align-items: center !important;
         border: 1.5px solid #eaeaea !important;
         border-radius: 12px !important;
         overflow: hidden !important;
         background: #fafafa !important;
-        padding: 12pt !important;
+        padding: 16pt !important;
         box-sizing: border-box !important;
     }
 
     .print-visual-row img {
         width: 100% !important;
-        height: 180pt !important;
+        height: 220pt !important;
         object-fit: cover !important;
         border-radius: 8px !important;
         display: block !important;
