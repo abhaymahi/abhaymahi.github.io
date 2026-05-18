@@ -244,4 +244,40 @@ document.addEventListener("DOMContentLoaded", () => {
         if (e.key === 'ArrowRight') showNext();
         if (e.key === 'ArrowLeft') showPrev();
     });
+
+    // Gallery Dynamic Category Filtering
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const galleryItems = document.querySelectorAll('.gallery-grid .gallery-item');
+
+    if (filterBtns.length > 0) {
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Active status shift
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+
+                const selectedCategory = btn.getAttribute('data-filter');
+
+                galleryItems.forEach(item => {
+                    const categoriesStr = item.getAttribute('data-category') || '';
+                    const categoriesList = categoriesStr.split(' ');
+
+                    if (selectedCategory === 'all' || categoriesList.includes(selectedCategory)) {
+                        item.style.display = 'block';
+                        // Smooth fade-in
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'scale(1)';
+                        }, 20);
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'scale(0.95)';
+                        setTimeout(() => {
+                            item.style.display = 'none';
+                        }, 300); // matches CSS transition duration
+                    }
+                });
+            });
+        });
+    }
 });
