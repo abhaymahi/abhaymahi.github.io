@@ -135,6 +135,32 @@ nav {
     text-shadow: 0 0 10px rgba(212, 175, 55, 0.4);
 }
 
+.nav-cv-btn {
+    background: rgba(212, 175, 55, 0.08) !important;
+    border: 1px solid var(--accent-primary) !important;
+    color: var(--accent-primary) !important;
+    padding: 0.45rem 1rem !important;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.75rem !important;
+    font-weight: 700 !important;
+    transition: var(--transition-smooth);
+    margin-left: 0.5rem;
+}
+
+.nav-cv-btn i {
+    font-size: 0.8rem;
+}
+
+.nav-cv-btn:hover {
+    background: var(--accent-primary) !important;
+    color: var(--bg-primary) !important;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+    text-shadow: none !important;
+}
+
 /* --- Mobile Menu Toggle --- */
 .menu-toggle {
     display: flex;
@@ -1088,5 +1114,140 @@ footer {
         top: 4px;
         right: 4px;
         border-radius: 4px;
+    }
+}
+
+/* --- Print CV Stylesheet (LaTex-like modern layout) --- */
+#print-cv-container {
+    display: none;
+}
+
+@media print {
+    /* Hide all main portfolio website containers */
+    body * {
+        visibility: hidden !important;
+    }
+    
+    /* Show only the print CV container */
+    #print-cv-container,
+    #print-cv-container * {
+        visibility: visible !important;
+    }
+    
+    #print-cv-container {
+        display: block !important;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100% !important;
+        background: #ffffff !important;
+        color: #111111 !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        box-sizing: border-box;
+        font-family: 'Outfit', 'Inter', sans-serif !important;
+    }
+    
+    /* Page setup for A4 */
+    @page {
+        size: A4;
+        margin: 1.2cm 1.5cm;
+    }
+    
+    /* Style layout for the print version */
+    .print-cv-header {
+        border-bottom: 2px solid #d4af37 !important;
+        padding-bottom: 15px;
+        margin-bottom: 25px;
+    }
+    
+    .print-cv-header h1 {
+        font-size: 26pt !important;
+        color: #111111 !important;
+        margin: 0 !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.5px !important;
+        text-transform: uppercase;
+    }
+    
+    .print-cv-subtitle {
+        font-size: 11pt !important;
+        color: #d4af37 !important;
+        margin: 6px 0 8px 0 !important;
+        text-transform: uppercase !important;
+        letter-spacing: 1.5px !important;
+        font-weight: 600 !important;
+    }
+
+    .print-cv-header-details {
+        display: flex;
+        gap: 20px;
+        font-size: 9pt !important;
+        color: #555555 !important;
+        margin-top: 5px;
+    }
+
+    .print-cv-header-details span {
+        display: inline-flex;
+        align-items: center;
+        gap: 5px;
+    }
+    
+    .print-cv-body {
+        display: grid !important;
+        grid-template-columns: 2.2fr 5fr !important;
+        gap: 25pt !important;
+    }
+    
+    .print-cv-left {
+        border-right: 1.5px solid #eaeaea !important;
+        padding-right: 18pt !important;
+    }
+    
+    .print-cv-section {
+        margin-bottom: 18pt !important;
+    }
+    
+    .print-cv-section h3 {
+        font-size: 11pt !important;
+        color: #d4af37 !important;
+        text-transform: uppercase !important;
+        border-bottom: 1.5px solid #d4af37 !important;
+        padding-bottom: 4px !important;
+        margin-bottom: 10pt !important;
+        letter-spacing: 1px !important;
+        font-weight: 700 !important;
+    }
+    
+    .print-cv-left p {
+        font-size: 9pt !important;
+        color: #444444 !important;
+        margin: 5px 0 !important;
+        line-height: 1.4 !important;
+    }
+    
+    .print-cv-right .print-cv-item {
+        margin-bottom: 12pt !important;
+    }
+    
+    .print-cv-right h4 {
+        font-size: 11pt !important;
+        color: #111111 !important;
+        margin: 0 0 3px 0 !important;
+        font-weight: 700 !important;
+    }
+    
+    .print-cv-item-meta {
+        font-size: 8.5pt !important;
+        color: #d4af37 !important;
+        margin: 0 0 5px 0 !important;
+        font-weight: 600 !important;
+    }
+    
+    .print-cv-right p {
+        font-size: 9pt !important;
+        color: #555555 !important;
+        margin: 0 !important;
+        line-height: 1.4 !important;
     }
 }

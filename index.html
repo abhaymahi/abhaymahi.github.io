@@ -21,13 +21,13 @@
         <div class="container">
             <nav>
                 <a href="#" class="logo">ABHAY<span>.</span></a>
-                <ul class="nav-links">
+                <ul class="nav-links" style="align-items: center;">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
                     <li><a href="#achievements">Achievements</a></li>
                     <li><a href="#gallery">Gallery</a></li>
-                    <li><a href="#resume">Resume</a></li>
                     <li><a href="#contact">Contact</a></li>
+                    <li><a href="#" class="nav-cv-btn" onclick="window.print(); return false;"><i class="fa-solid fa-download"></i>CV</a></li>
                 </ul>
                 <div class="menu-toggle" id="mobile-menu-btn">
                     <span></span>
@@ -51,7 +51,7 @@
                         </p>
                         <div class="hero-cta" style="display: flex; flex-wrap: wrap; gap: 1rem;">
                             <a href="#achievements" class="btn btn-primary">My Achievements</a>
-                            <a href="#gallery" class="btn btn-outline">View Gallery</a>
+                            <a href="#" onclick="window.print(); return false;" class="btn btn-outline"><i class="fa-solid fa-download" style="margin-right: 8px;"></i>Download CV</a>
                             <a href="#contact" class="btn btn-outline">Work with me</a>
                         </div>
                     </div>
@@ -101,6 +101,68 @@
                                 <h3 style="color: var(--accent-primary); font-size: 1.8rem; font-family: var(--font-primary); margin-bottom: 0.25rem;">2024</h3>
                                 <p style="font-size: 0.65rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 1px;">Model of the Year</p>
                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Credentials Grid in About Section -->
+                <div class="responsive-grid three-cols reveal" style="margin-top: 3.5rem;">
+                    <!-- Academics & Leadership -->
+                    <div class="glass-card" style="padding: 2rem; height: 100%;">
+                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1.5rem;">
+                            <i class="fa-solid fa-graduation-cap" style="color: var(--accent-primary); font-size: 1.5rem;"></i>
+                            <h3 style="font-family: var(--font-primary); font-size: 1.25rem; font-weight: 700; color: var(--text-main); margin: 0;">Education & Leadership</h3>
+                        </div>
+                        <div style="margin-bottom: 1.25rem;">
+                            <span style="font-size: 0.75rem; color: var(--accent-primary); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;">2023 - 2026</span>
+                            <h4 style="font-size: 1rem; color: var(--text-main); margin: 2px 0 4px 0; font-weight: 600;">B.A. Political Science (Honors)</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin: 0;">B.N. College, Bhagalpur</p>
+                        </div>
+                        <div style="border-top: 1px solid var(--glass-border); padding-top: 1.25rem;">
+                            <h4 style="font-size: 1rem; color: var(--text-main); margin: 0 0 6px 0; font-weight: 600;">Student Union Leader</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin: 0;">Representing student welfare, organizing academic councils and local bodies.</p>
+                        </div>
+                    </div>
+
+                    <!-- Skills & Core Competencies -->
+                    <div class="glass-card" style="padding: 2rem; height: 100%;">
+                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1.5rem;">
+                            <i class="fa-solid fa-bolt" style="color: var(--accent-primary); font-size: 1.5rem;"></i>
+                            <h3 style="font-family: var(--font-primary); font-size: 1.25rem; font-weight: 700; color: var(--text-main); margin: 0;">Core Strengths</h3>
+                        </div>
+                        <div style="display: flex; flex-wrap: wrap; gap: 0.6rem;">
+                            <span class="skill-badge" style="padding: 0.4rem 0.85rem; font-size: 0.75rem;">Leadership</span>
+                            <span class="skill-badge" style="padding: 0.4rem 0.85rem; font-size: 0.75rem;">Public Speaking</span>
+                            <span class="skill-badge" style="padding: 0.4rem 0.85rem; font-size: 0.75rem;">Social Awareness</span>
+                            <span class="skill-badge" style="padding: 0.4rem 0.85rem; font-size: 0.75rem;">Event Organization</span>
+                            <span class="skill-badge" style="padding: 0.4rem 0.85rem; font-size: 0.75rem;">Team Management</span>
+                            <span class="skill-badge" style="padding: 0.4rem 0.85rem; font-size: 0.75rem;">Problem Solving</span>
+                            <span class="skill-badge" style="padding: 0.4rem 0.85rem; font-size: 0.75rem;">Time Management</span>
+                        </div>
+                        <div style="border-top: 1px solid var(--glass-border); padding-top: 1.25rem; margin-top: 1.25rem;">
+                            <h4 style="font-size: 1rem; color: var(--text-main); margin: 0 0 4px 0; font-weight: 600;">Linguistic Proficiency</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin: 0;">Hindi (Fluent), English (Fluent)</p>
+                        </div>
+                    </div>
+
+                    <!-- Personal & Hobbies -->
+                    <div class="glass-card" style="padding: 2rem; height: 100%;">
+                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 1.5rem;">
+                            <i class="fa-solid fa-heart" style="color: var(--accent-primary); font-size: 1.5rem;"></i>
+                            <h3 style="font-family: var(--font-primary); font-size: 1.25rem; font-weight: 700; color: var(--text-main); margin: 0;">Interests & Details</h3>
+                        </div>
+                        <div style="margin-bottom: 1.25rem;">
+                            <h4 style="font-size: 1rem; color: var(--text-main); margin: 0 0 6px 0; font-weight: 600;">Hobbies</h4>
+                            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                                <span style="background: rgba(255,255,255,0.03); padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 0.75rem; color: var(--text-muted); border: 1px solid rgba(255,255,255,0.05);"><i class="fa-solid fa-book" style="margin-right: 4px; color: var(--accent-primary);"></i> Reading</span>
+                                <span style="background: rgba(255,255,255,0.03); padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 0.75rem; color: var(--text-muted); border: 1px solid rgba(255,255,255,0.05);"><i class="fa-solid fa-camera" style="margin-right: 4px; color: var(--accent-primary);"></i> Photo</span>
+                                <span style="background: rgba(255,255,255,0.03); padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 0.75rem; color: var(--text-muted); border: 1px solid rgba(255,255,255,0.05);"><i class="fa-solid fa-plane" style="margin-right: 4px; color: var(--accent-primary);"></i> Travel</span>
+                                <span style="background: rgba(255,255,255,0.03); padding: 0.3rem 0.7rem; border-radius: 6px; font-size: 0.75rem; color: var(--text-muted); border: 1px solid rgba(255,255,255,0.05);"><i class="fa-solid fa-dumbbell" style="margin-right: 4px; color: var(--accent-primary);"></i> Fitness</span>
+                            </div>
+                        </div>
+                        <div style="border-top: 1px solid var(--glass-border); padding-top: 1.25rem;">
+                            <h4 style="font-size: 1rem; color: var(--text-main); margin: 0 0 6px 0; font-weight: 600;">Community Impact</h4>
+                            <p style="font-size: 0.85rem; color: var(--text-muted); line-height: 1.5; margin: 0;">Community Social Worker conducting rural education campaigns in Katihar blocks.</p>
                         </div>
                     </div>
                 </div>
@@ -454,90 +516,7 @@
             </div>
         </section>
 
-        <!-- Resume & Credentials Section -->
-        <section id="resume">
-            <div class="container">
-                <div class="section-title">
-                    <span class="hero-label">Qualifications</span>
-                    <h2>Resume.</h2>
-                </div>
-
-                <div class="resume-grid">
-                    <!-- Education & Leadership column -->
-                    <div class="resume-column">
-                        <div class="glass-card reveal" style="padding: 2.5rem;">
-                            <h3 style="color: var(--accent-primary); margin-bottom: 2rem; font-size: 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
-                                <i class="fa-solid fa-graduation-cap"></i> Education
-                            </h3>
-                            
-                            <div class="resume-block">
-                                <span class="resume-block-date">May 2023 - March 2026</span>
-                                <h4 class="resume-block-title">Bachelor of Arts in Political Science (Honors)</h4>
-                                <h5 class="resume-block-subtitle">B.N. College, Bhagalpur</h5>
-                                <p>Rigorous academic study focusing on political theories, governance systems, civic structures, and constitutional studies. Graduated with Honors in March 2026.</p>
-                            </div>
-                        </div>
-
-                        <div class="glass-card reveal" style="padding: 2.5rem; margin-top: 1.5rem;">
-                            <h3 style="color: var(--accent-primary); margin-bottom: 2rem; font-size: 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
-                                <i class="fa-solid fa-users-line"></i> Leadership & Service
-                            </h3>
-
-                            <div class="resume-block">
-                                <span class="resume-block-date">Ongoing Responsibilities</span>
-                                <h4 class="resume-block-title">Student Union Leader</h4>
-                                <h5 class="resume-block-subtitle">Regional Student Coalition</h5>
-                                <p>Actively leading and unifying student unions in the region. Representing student academic and structural interests, mediating grievances with administration, and organizing community events.</p>
-                            </div>
-
-                            <div class="resume-block">
-                                <span class="resume-block-date">Social Welfare Initiative</span>
-                                <h4 class="resume-block-title">Community Social Worker</h4>
-                                <h5 class="resume-block-subtitle">Rural Education Campaigns</h5>
-                                <p>Spearheading localized awareness programs to emphasize education and resource accessibility across rural blocks and underprivileged communities in Katihar.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Skills & Hobbies column -->
-                    <div class="resume-column">
-                        <div class="glass-card reveal" style="padding: 2.5rem; height: 100%;">
-                            <h3 style="color: var(--accent-primary); margin-bottom: 2rem; font-size: 1.5rem; display: flex; align-items: center; gap: 0.75rem;">
-                                <i class="fa-solid fa-star"></i> Core Skills
-                            </h3>
-                            <div class="skills-container" style="margin-bottom: 2.5rem;">
-                                <span class="skill-badge">Leadership</span>
-                                <span class="skill-badge">Public Speaking</span>
-                                <span class="skill-badge">Event Organization</span>
-                                <span class="skill-badge">Social Awareness</span>
-                                <span class="skill-badge">Teamwork</span>
-                                <span class="skill-badge">Problem Solving</span>
-                                <span class="skill-badge">Time Management</span>
-                            </div>
-
-                            <h3 style="color: var(--accent-primary); margin-bottom: 1.5rem; font-size: 1.3rem; display: flex; align-items: center; gap: 0.75rem;">
-                                <i class="fa-solid fa-language"></i> Languages
-                            </h3>
-                            <div class="skills-container" style="margin-bottom: 2.5rem;">
-                                <span class="skill-badge" style="border-color: var(--accent-primary); color: var(--accent-primary);">Hindi (Fluent)</span>
-                                <span class="skill-badge" style="border-color: var(--accent-primary); color: var(--accent-primary);">English (Fluent)</span>
-                            </div>
-
-                            <h3 style="color: var(--accent-primary); margin-bottom: 1.5rem; font-size: 1.3rem; display: flex; align-items: center; gap: 0.75rem;">
-                                <i class="fa-solid fa-heart"></i> Hobbies & Interests
-                            </h3>
-                            <div class="skills-container">
-                                <span class="skill-badge">Reading</span>
-                                <span class="skill-badge">Traveling</span>
-                                <span class="skill-badge">Photography</span>
-                                <span class="skill-badge">Cricket</span>
-                                <span class="skill-badge">Fitness</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- Resume removed dynamically -->
 
         <!-- Contact Section -->
         <section id="contact">
@@ -598,6 +577,93 @@
             <p style="margin-top: 1rem;"><a href="v1_2022/index.html" style="color: var(--accent-primary); font-size: 0.7rem; text-decoration: none; opacity: 0.5;">Archive: View 2022 Campaign Site</a></p>
         </div>
     </footer>
+
+    <!-- Hidden Print CV Template (Optimized for perfect A4 vector PDF save) -->
+    <div id="print-cv-container">
+        <div class="print-cv-header">
+            <h1>Abhay Kumar Rajak</h1>
+            <p class="print-cv-subtitle">Political Science Scholar | Model | Social Worker</p>
+            <div class="print-cv-header-details">
+                <span><i class="fa-solid fa-phone"></i> +91-6201448610</span>
+                <span><i class="fa-solid fa-envelope"></i> contact@abhaymahi.in</span>
+                <span><i class="fa-solid fa-location-dot"></i> Katihar, Bihar, India</span>
+            </div>
+        </div>
+        <div class="print-cv-body">
+            <div class="print-cv-left">
+                <div class="print-cv-section">
+                    <h3>Personal Info</h3>
+                    <p style="font-weight: 600; color: #111; margin-bottom: 4px;">Address:</p>
+                    <p style="margin-bottom: 10px;">Patthar Tola, Kursela, Katihar, Bihar, India</p>
+                    
+                    <p style="font-weight: 600; color: #111; margin-bottom: 4px;">Languages:</p>
+                    <p style="margin-bottom: 10px;">Hindi (Fluent)<br>English (Fluent)</p>
+                </div>
+                <div class="print-cv-section">
+                    <h3>Core Skills</h3>
+                    <p>Leadership</p>
+                    <p>Public Speaking</p>
+                    <p>Social Awareness</p>
+                    <p>Event Organization</p>
+                    <p>Teamwork</p>
+                    <p>Problem Solving</p>
+                    <p>Time Management</p>
+                </div>
+                <div class="print-cv-section">
+                    <h3>Hobbies</h3>
+                    <p>Reading & Literature</p>
+                    <p>Photography</p>
+                    <p>Traveling & Exploration</p>
+                    <p>Fitness & Athletic Work</p>
+                    <p>Playing Cricket</p>
+                </div>
+            </div>
+            <div class="print-cv-right">
+                <div class="print-cv-section">
+                    <h3>Education</h3>
+                    <div class="print-cv-item">
+                        <h4>B.A. in Political Science (Honors)</h4>
+                        <p class="print-cv-item-meta">B.N. College, Bhagalpur | 2023 - 2026</p>
+                        <p>Specialized study in governance, international relations, political theories, and constitutional history. Graduated with Honors in March 2026.</p>
+                    </div>
+                </div>
+                <div class="print-cv-section">
+                    <h3>Milestones & Pageant Achievements</h3>
+                    <div class="print-cv-item">
+                        <h4>Viksit Bharat Youth Parliament Speaker (2026)</h4>
+                        <p class="print-cv-item-meta">Bihar Legislative Assembly, Patna</p>
+                        <p>Represented Katihar District inside the Legislative Assembly, speaking on progressive governance and youth reforms.</p>
+                    </div>
+                    <div class="print-cv-item">
+                        <h4>Top Student Speaker & Gold Medalist (2025)</h4>
+                        <p class="print-cv-item-meta">Bihar Chhatra Sansad, Patna</p>
+                        <p>Secured the top speaker honors and first rank gold medal. Awarded by MLA Anand Mishra and MP Shambhavi Choudhary.</p>
+                    </div>
+                    <div class="print-cv-item">
+                        <h4>Model of the Year (2024)</h4>
+                        <p class="print-cv-item-meta">Delhi Iconic Runway Season 06</p>
+                        <p>Walked the premium national runway as Model of the Year, awarded by Bollywood actress Archana Gautam.</p>
+                    </div>
+                    <div class="print-cv-item">
+                        <h4>Mr. Teen India Popular (2022)</h4>
+                        <p class="print-cv-item-meta">National Pageant Champion</p>
+                        <p>Crowned Mr. Teen India Popular in Delhi in the presence of Tushar Kapoor, Ayub Khan, and Sambita Bose.</p>
+                    </div>
+                </div>
+                <div class="print-cv-section">
+                    <h3>Social Leadership</h3>
+                    <div class="print-cv-item">
+                        <h4>Regional Student Union Leader</h4>
+                        <p>Leading student welfare, mediating grievances, and coordinating youth academic conferences.</p>
+                    </div>
+                    <div class="print-cv-item">
+                        <h4>Community Social Worker</h4>
+                        <p>Directing block drives for basic literacy, health access, and social awareness across Bihar villages.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="js/main.js"></script>
 </body>
