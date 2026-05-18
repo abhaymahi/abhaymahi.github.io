@@ -1461,41 +1461,54 @@ footer {
         font-weight: 700 !important;
     }
 
-    .print-visual-grid {
+    .print-visual-row {
         display: grid !important;
-        grid-template-columns: 1fr 1fr !important;
-        gap: 15pt !important;
-        margin-top: 10pt !important;
-    }
-
-    .print-visual-card {
-        border: 1px solid #e0e0e0 !important;
-        border-radius: 8px !important;
+        grid-template-columns: 2.2fr 3fr !important;
+        gap: 20pt !important;
+        margin-bottom: 25pt !important;
+        align-items: center !important;
+        border: 1.5px solid #eaeaea !important;
+        border-radius: 12px !important;
         overflow: hidden !important;
         background: #fafafa !important;
-        padding: 8pt !important;
+        padding: 12pt !important;
         box-sizing: border-box !important;
     }
 
-    .print-visual-card img {
+    .print-visual-row img {
         width: 100% !important;
-        height: 140pt !important;
+        height: 180pt !important;
         object-fit: cover !important;
-        border-radius: 4px !important;
+        border-radius: 8px !important;
         display: block !important;
     }
 
-    .print-visual-card h4 {
-        font-size: 10pt !important;
+    .print-visual-content {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+    }
+
+    .print-visual-content h4 {
+        font-size: 13pt !important;
         color: #111111 !important;
-        margin: 8pt 0 4pt 0 !important;
+        margin: 0 0 6pt 0 !important;
         font-weight: 700 !important;
     }
 
-    .print-visual-card p {
-        font-size: 8pt !important;
+    .print-visual-content .print-visual-meta {
+        font-size: 9.5pt !important;
+        color: #d4af37 !important;
+        font-weight: 600 !important;
+        margin-bottom: 8pt !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.5px !important;
+    }
+
+    .print-visual-content p {
+        font-size: 10pt !important;
         color: #555555 !important;
         margin: 0 !important;
-        line-height: 1.4 !important;
+        line-height: 1.5 !important;
     }
 }
